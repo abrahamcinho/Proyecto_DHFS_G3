@@ -6,7 +6,6 @@ var path = require("path");
 const user = require("../user/usuarios.json");
 const userPath = path.resolve(__dirname, "../user/usuarios.json");
 
-
 //Obtener listado de usuarios
 router.get("/", (req, res) => {
     res.render("listadoUsuarios", {
@@ -31,26 +30,6 @@ router.get("/usuario/:id", (req, res) => {
         usuario: user,
         reqID: reqID,
     });
-}); 
-
-//Formulario de creación de usuarios
-router.get("/crear", (req, res) => res.render("crearUser"));
-//Acción de creación(a donde se envía el formulario)
-router.post("/crear", (req, res) => {
-    // let usuariososJson = user; //fs.readFile("../user/usuarios.json", "utf-8");
-    // let userJS = JSON.parse(usuariosJson);
-    let newUser = {
-        id: 1,
-        nombre: req.body.nombre,
-        apellido: req.body.apellido,
-        email: req.body.email,
-        password: req.body.password,
-        category: req.body.categoria
-    };
-    user.push(newUser);
-    var userJson = JSON.stringify(user);
-    fs.writeFileSync(userPath, userJson);
-    res.redirect("/usuarios");
 });
 
 //Formulario de edición de usuarios

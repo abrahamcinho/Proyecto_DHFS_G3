@@ -8,8 +8,6 @@ const dataPath = path.resolve(__dirname, "../data/usuarios.json")
 const bcryptjs = require("bcryptjs");
 const multer = require("multer");
 
-
-
 //configuracion de multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -23,11 +21,8 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({ storage });
 
+router.get("/", (req, res) => res.render("register"));
 
-
-router.get("/", (req, res) => {
-    res.render("register");
-});
 //Registro de Usuario
 router.post("/", uploadFile.single("avatar"), (req, res) => {
     let usuario = findByField("email", req.body.email);
@@ -57,7 +52,6 @@ router.post("/", uploadFile.single("avatar"), (req, res) => {
         fs.writeFileSync(dataPath, prodJson);
         //res.send("Registro Exitoso")
         res.redirect("/login");
-
     }
 });
 
@@ -65,7 +59,6 @@ function findByField(field, text) {
     let todosLosUsuarios = findAll();
     let usuarioEncontrado = todosLosUsuarios.find(oneUser => oneUser[field] === text);
     return usuarioEncontrado;
-
 }
 
 function findAll() {
