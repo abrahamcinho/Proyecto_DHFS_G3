@@ -6,7 +6,6 @@ var path = require("path");
 const data = require("../data/productos.json");
 const dataPath = path.resolve(__dirname, "../data/productos.json")
 
-
 //Obtener listado de productos
 router.get("/", (req, res) => {
     res.render("listadoProductos", {
