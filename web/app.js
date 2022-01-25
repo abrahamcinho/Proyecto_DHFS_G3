@@ -34,9 +34,6 @@ const { fnUtils } = require("./configs/database.config");
 fnUtils.checkSqlize();
 fnUtils.UsersSyncDB(false);
 
-//Controllers
-
-
 //configuracion db
 db.sqlize.sync()
     .then(() => console.log("database connect true..."))
@@ -49,18 +46,25 @@ const registerCTRL = require("./controllers/register_Ctrl");
 const productosCTRL = require("./controllers/productos_Ctrl");
 
 //CRUD users controllers
-const cbCreateUser = require("./controllers/users_ctrl/create.user.ctrl");
-const cbFindAllUsers = require("./controllers/users_ctrl/findall.users.ctrl");
-const cbFindOneUser = require("./controllers/users_ctrl/findone.user.ctrl");
-const cbDeleteOneUser = require("./controllers/users_ctrl/deleteone.user.ctrl");
-const cbUpdateOneUser = require("./controllers/users_ctrl/updateone.user.ctrl");
+const cbCreateUser = require("./controllers/users_ctrls/create.user.ctrl");
+const cbFindAllUsers = require("./controllers/users_ctrls/findall.users.ctrl");
+const cbFindOneUser = require("./controllers/users_ctrls/findone.user.ctrl");
+const cbDeleteOneUser = require("./controllers/users_ctrls/deleteone.user.ctrl");
+const cbUpdateOneUser = require("./controllers/users_ctrls/updateone.user.ctrl");
 
 //CRUD products controllers
-const cbCreateProd = require("./controllers/users_ctrl/create.product.ctrl");
-const cbFindAllProds = require("./controllers/users_ctrl/findall.products.ctrl");
-const cbFindOneProd = require("./controllers/users_ctrl/findone.product.ctrl");
-const cbDeleteOneProd = require("./controllers/users_ctrl/deleteone.product.ctrl");
-const cbUpdateOneProd = require("./controllers/users_ctrl/updateone.product.ctrl");
+const cbCreateProd = require("./controllers/users_ctrls/create.product.ctrl");
+const cbFindAllProds = require("./controllers/users_ctrls/findall.products.ctrl");
+const cbFindOneProd = require("./controllers/users_ctrls/findone.product.ctrl");
+const cbDeleteOneProd = require("./controllers/users_ctrls/deleteone.product.ctrl");
+const cbUpdateOneProd = require("./controllers/users_ctrls/updateone.product.ctrl");
+
+//CRUD users categories controllers
+const cbCreateUserCateg = require("./controllers/users_ctrls/create.user_categories.ctrl");
+const cbDeleteOneUserCateg = require("./controllers/users_ctrls/deleteone.user_categorie.ctrl");
+const cbFindAllUsersCateg = require("./controllers/users_ctrls/findall.users_categories.ctrl");
+const cbFindOneUserCateg = require("./controllers/users_ctrls/findone.user_categorie.ctrl");
+const cbUpdateOneUserCateg = require("./controllers/users_ctrls/updateone.user_categorie.ctrl");
 
 //tag endpoints
 const UserAPI = require("./tag_endpoints/users.api");
