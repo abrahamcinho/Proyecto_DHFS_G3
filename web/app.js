@@ -55,6 +55,7 @@ const cbUpdateOneProd = require("./controllers/users_ctrl/updateone.product.ctrl
 //tag endpoints
 const UserAPI = require("./tag_endpoints/users.api");
 const ProductsAPI = require("./tag_endpoints/products.api");
+const UserCategAPI = require('./tag_endpoints/user_categories.api');
 
 app.use(auth);
 app.use("/carritoDeCompras", carritoCTRL);
@@ -70,17 +71,24 @@ app.use('/carritoDeCompras', require('./routers/shoppingcart'));
 
 //CRUD users endpoints
 app.post(UserAPI.CREATE_USER, cbCreateUser);
+app.delete(UserAPI.DELETE_ONE_USER, cbDeleteOneUser);
 app.get(UserAPI.FIND_ALL_USERS, cbFindAllUsers);
 app.get(UserAPI.FIND_ONE_USER, cbFindOneUser);
-app.delete(UserAPI.DELETE_ONE_USER, cbDeleteOneUser);
 app.put(UserAPI.UPDATE_ONE_USER, cbUpdateOneUser);
 
 //CRUD products endpoints
 app.post(ProductsAPI.CREATE_PRODUCT, cbCreateProd);
+app.delete(ProductsAPI.DELETE_ONE_PRODUCT, cbDeleteOneProd);
 app.get(ProductsAPI.FIND_ALL_PRODUCTS, cbFindAllProds);
 app.get(ProductsAPI.FIND_ONE_PRODUCT, cbFindOneProd);
-app.delete(ProductsAPI.DELETE_ONE_PRODUCT, cbDeleteOneProd);
 app.put(ProductsAPI.UPDATE_ONE_PRODUCT, cbUpdateOneProd);
+
+//CRUD users categories endpoints
+app.post(UserCategAPI.CREATE_PRODUCT, cbCreateUserCateg);
+app.delete(UserCategAPI.DELETE_ONE_PRODUCT, cbDeleteOneUserCateg);
+app.get(UserCategAPI.FIND_ALL_PRODUCTS, cbFindAllUsersCateg);
+app.get(UserCategAPI.FIND_ONE_PRODUCT, cbFindOneUserCateg);
+app.put(UserCategAPI.UPDATE_ONE_PRODUCT, cbUpdateOneUserCateg);
 
 //Listen port
 app.listen(3030, (req, res) => {
