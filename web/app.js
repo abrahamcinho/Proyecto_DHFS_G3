@@ -7,6 +7,8 @@ const multer = require("multer");
 const session = require("express-session");
 var cookieParser = require("cookie-parser");
 const auth = require("./middlewares/authUser");
+//configuracion db
+const db = require("./config/dataBase_config");
 
 app.use(cookieParser());
 
@@ -25,6 +27,7 @@ app.use(express.urlencoded({
 
 app.use(express.json());
 
+
 //sequelize config
 const { fnUtils } = require("./configs/database.config");
 
@@ -32,6 +35,13 @@ fnUtils.checkSqlize();
 fnUtils.UsersSyncDB(false);
 
 //Controllers
+
+
+//configuracion db
+db.sqlize.sync()
+    .then(() => console.log("database connect true..."))
+    .catch(() => console.log("database connect false..."));
+
 const carritoCTRL = require("./controllers/carrito_Ctrl");
 const homeCTRL = require("./controllers/home_Ctrl");
 const loginCTRL = require("./controllers/login_Ctrl");
