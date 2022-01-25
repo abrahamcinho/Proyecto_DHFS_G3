@@ -53,18 +53,18 @@ const cbDeleteOneUser = require("./controllers/users_ctrls/deleteone.user.ctrl")
 const cbUpdateOneUser = require("./controllers/users_ctrls/updateone.user.ctrl");
 
 //CRUD products controllers
-const cbCreateProd = require("./controllers/users_ctrls/create.product.ctrl");
-const cbFindAllProds = require("./controllers/users_ctrls/findall.products.ctrl");
-const cbFindOneProd = require("./controllers/users_ctrls/findone.product.ctrl");
-const cbDeleteOneProd = require("./controllers/users_ctrls/deleteone.product.ctrl");
-const cbUpdateOneProd = require("./controllers/users_ctrls/updateone.product.ctrl");
+const cbCreateProd = require("./controllers/products_ctrls/create.product.ctrl");
+const cbFindAllProds = require("./controllers/products_ctrls/findall.products.ctrl");
+const cbFindOneProd = require("./controllers/products_ctrls/findone.product.ctrl");
+const cbDeleteOneProd = require("./controllers/products_ctrls/deleteone.product.ctrl");
+const cbUpdateOneProd = require("./controllers/products_ctrls/updateone.product.ctrl");
 
 //CRUD users categories controllers
-const cbCreateUserCateg = require("./controllers/users_ctrls/create.user_categories.ctrl");
-const cbDeleteOneUserCateg = require("./controllers/users_ctrls/deleteone.user_categorie.ctrl");
-const cbFindAllUsersCateg = require("./controllers/users_ctrls/findall.users_categories.ctrl");
-const cbFindOneUserCateg = require("./controllers/users_ctrls/findone.user_categorie.ctrl");
-const cbUpdateOneUserCateg = require("./controllers/users_ctrls/updateone.user_categorie.ctrl");
+const cbCreateUserCateg = require("./controllers/users_categories_ctrls/create.user_categories.ctrl");
+const cbDeleteOneUserCateg = require("./controllers/users_categories_ctrls/deleteone.user_categorie.ctrl");
+const cbFindAllUsersCateg = require("./controllers/users_categories_ctrls/findall.users_categories.ctrl");
+const cbFindOneUserCateg = require("./controllers/users_categories_ctrls/findone.user_categorie.ctrl");
+const cbUpdateOneUserCateg = require("./controllers/users_categories_ctrls/updateone.user_categorie.ctrl");
 
 //tag endpoints
 const UserAPI = require("./tag_endpoints/users.api");
