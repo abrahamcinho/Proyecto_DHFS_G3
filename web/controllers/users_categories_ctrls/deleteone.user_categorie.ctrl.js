@@ -9,7 +9,7 @@ const cbDeleteOneUserCateg = async (req, res) => {
       }
     };
 
-    await models.Users_Categories.destroy(whereUserCategIdEQ);
+    await models.UsersCateg.destroy(whereUserCategIdEQ);
     res.json({ err: false, payload: "delete user categorie true" });
   } catch (err) {
     res.json({ err: true, payload: err });

@@ -2,7 +2,7 @@ const { models } = require("../../configs/database.config");
 
 const cbFindAllUsersCateg = async (req, res) => {
   try {
-    const users = await models.Users_Categories.findAll();
+    const users = await models.UsersCateg.findAll();
     res.render("users_categories", {
       err: false,
       payload: users

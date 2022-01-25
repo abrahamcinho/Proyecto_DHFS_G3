@@ -57,13 +57,21 @@ const Prods = sqlize.define("products", {
 	timestamps: false
 });
 
+//Model users categories
+const UsersCateg = sqlize.define("users_categories", {
+	users_categ_id: { type: Sequelize.INTEGER, primaryKey: true, allowNull: false, autoIncrement: true },
+	name: { type: Sequelize.STRING, allowNull: false }
+}, {
+	timestamps: false
+});
 
 module.exports = {
   sqlize,
   Sequelize,
   models: {
     Users,
-    Prods
+    Prods,
+    UsersCateg
   },
   fnUtils: {
     checkSqlize,

@@ -9,7 +9,7 @@ const cbFindOneUserCateg = async (req, res) => {
       }
     };
 
-    const userscateg = await models.Users_Categories.findOne(whereUserCategIdEQ);
+    const userscateg = await models.UsersCateg.findOne(whereUserCategIdEQ);
     res.json({ err: false, payload: userscateg });
   } catch (err) {
     res.json({ err: true, payload: err });

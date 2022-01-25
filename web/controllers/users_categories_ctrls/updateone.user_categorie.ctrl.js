@@ -14,7 +14,7 @@ const cbUpdateOneUserCateg = async (req, res) => {
 	    name: req.params.name
     };
 
-    await models.Users_Categories.update(setChange, whereUserCategIdEQ);
+    await models.UsersCateg.update(setChange, whereUserCategIdEQ);
     res.json({ err: false, payload: "update user true" });
   } catch (err) {
     res.json({ err: true, payload: err });
