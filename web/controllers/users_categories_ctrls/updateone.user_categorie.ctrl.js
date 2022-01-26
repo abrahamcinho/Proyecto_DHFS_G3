@@ -1,5 +1,4 @@
-const { models } = require("../../configs/database.config");
-
+const { db } = require("../../config/dataBase_config");
 
 const cbUpdateOneUserCateg = async (req, res) => {
   try {
@@ -14,7 +13,7 @@ const cbUpdateOneUserCateg = async (req, res) => {
 	    name: req.params.name
     };
 
-    await models.UsersCateg.update(setChange, whereUserCategIdEQ);
+    await db.UsersCateg.update(setChange, whereUserCategIdEQ);
     res.json({ err: false, payload: "update user true" });
   } catch (err) {
     res.json({ err: true, payload: err });

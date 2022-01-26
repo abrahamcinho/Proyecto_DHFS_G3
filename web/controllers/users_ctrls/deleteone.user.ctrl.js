@@ -1,5 +1,4 @@
-const { models } = require("../../configs/database.config");
-
+const { db } = require("../../config/dataBase_config");
 
 const cbDeleteOneUser = async (req, res) => {
   try {
@@ -9,7 +8,7 @@ const cbDeleteOneUser = async (req, res) => {
       }
     };
 
-    await models.Users.destroy(whereUserIdEQ);
+    await db.Users.destroy(whereUserIdEQ);
     res.json({ err: false, payload: "delete user true" });
   } catch (err) {
     res.json({ err: true, payload: err });

@@ -1,4 +1,4 @@
-const { models } = require("../../configs/database.config");
+const { db } = require("../../config/dataBase_config");
 
 const cbCreateUser = async (req, res) => {
   try {
@@ -11,7 +11,7 @@ const cbCreateUser = async (req, res) => {
       avatar: req.params.avatar,
       users_categ_id: req.params.users_categ_id
     };
-    await models.Users.create(User);
+    await db.Users.create(User);
     res.json({ err: false, payload: "user create" });
   } catch (err) {
     res.json({ err: true, payload: err });

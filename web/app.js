@@ -24,19 +24,11 @@ app.use(session({
     saveUninitialized: true
 }));
 
-
 app.use(express.urlencoded({
     extended: true
 }));
 
 app.use(express.json());
-
-
-//sequelize config
-const { fnUtils } = require("./configs/database.config");
-
-fnUtils.checkSqlize();
-fnUtils.UsersSyncDB(false);
 
 //configuracion db
 db.sqlize.sync()

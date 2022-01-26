@@ -1,5 +1,4 @@
-const { models } = require("../../configs/database.config");
-
+const { db } = require("../../config/dataBase_config");
 
 const cbFindOneUserCateg = async (req, res) => {
   try {
@@ -9,7 +8,7 @@ const cbFindOneUserCateg = async (req, res) => {
       }
     };
 
-    const userscateg = await models.UsersCateg.findOne(whereUserCategIdEQ);
+    const userscateg = await db.UsersCateg.findOne(whereUserCategIdEQ);
     res.json({ err: false, payload: userscateg });
   } catch (err) {
     res.json({ err: true, payload: err });

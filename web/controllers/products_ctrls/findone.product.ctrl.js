@@ -1,4 +1,4 @@
-const { models } = require("../../configs/database.config");
+const { db } = require("../../config/dataBase_config");
 
 
 const cbFindOneProd = async (req, res) => {
@@ -9,7 +9,7 @@ const cbFindOneProd = async (req, res) => {
       }
     };
 
-    const prods = await models.Prods.findOne(whereProdIdEQ);
+    const prods = await db.Products.findOne(whereProdIdEQ);
     res.json({ err: false, payload: prods });
   } catch (err) {
     res.json({ err: true, payload: err });

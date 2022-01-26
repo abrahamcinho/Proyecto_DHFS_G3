@@ -1,8 +1,8 @@
-const { models } = require("../../configs/database.config");
+const { db } = require("../../config/dataBase_config");
 
 const cbFindAllUsers = async (req, res) => {
   try {
-    const users = await models.Users.findAll();
+    const users = await db.Users.findAll();
     res.render("users", {
       err: false,
       payload: users
