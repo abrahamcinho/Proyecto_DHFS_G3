@@ -1,4 +1,4 @@
-const { models } = require("../../configs/database.config");
+const { db } = require("../../config/dataBase_config");
 
 const cbCreateProd = async (req, res) => {
   try {
@@ -12,7 +12,7 @@ const cbCreateProd = async (req, res) => {
       size_id: req.params.size_id,
       image: req.params.image
     };
-    await models.Prods.create(Product);
+    await db.Products.create(Product);
     res.json({ err: false, payload: "product create" });
   } catch (err) {
     res.json({ err: true, payload: err });

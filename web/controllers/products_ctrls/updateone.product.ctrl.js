@@ -1,5 +1,4 @@
-const { models } = require("../../configs/database.config");
-
+const { db } = require("../../config/dataBase_config");
 
 const cbUpdateOneProd = async (req, res) => {
   try {
@@ -20,7 +19,7 @@ const cbUpdateOneProd = async (req, res) => {
       image: req.params.image
     };
 
-    await models.Prods.update(setChange, whereProdIdEQ);
+    await db.Products.update(setChange, whereProdIdEQ);
     res.json({ err: false, payload: "update user true" });
   } catch (err) {
     res.json({ err: true, payload: err });
