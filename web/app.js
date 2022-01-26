@@ -18,7 +18,11 @@ app.use("/public", express.static("public"));
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 //app.use(methodOverride("_method"));
-app.use(session({ secret: "Session - Top Secret" }));
+app.use(session({
+    secret: "Session - Top Secret",
+    resave: true,
+    saveUninitialized: true
+}));
 
 
 app.use(express.urlencoded({
@@ -98,11 +102,11 @@ app.get(ProductsAPI.FIND_ONE_PRODUCT, cbFindOneProd);
 app.put(ProductsAPI.UPDATE_ONE_PRODUCT, cbUpdateOneProd);
 
 //CRUD users categories endpoints
-app.post(UserCategAPI.CREATE_PRODUCT, cbCreateUserCateg);
-app.delete(UserCategAPI.DELETE_ONE_PRODUCT, cbDeleteOneUserCateg);
-app.get(UserCategAPI.FIND_ALL_PRODUCTS, cbFindAllUsersCateg);
-app.get(UserCategAPI.FIND_ONE_PRODUCT, cbFindOneUserCateg);
-app.put(UserCategAPI.UPDATE_ONE_PRODUCT, cbUpdateOneUserCateg);
+app.post(UserCategAPI.CREATE_USER_CATEGORIES, cbCreateUserCateg);
+app.delete(UserCategAPI.DELETE_ONE_USER_CATEGORIES, cbDeleteOneUserCateg);
+app.get(UserCategAPI.FIND_ALL_USERS_CATEGORIES, cbFindAllUsersCateg);
+app.get(UserCategAPI.FIND_ONE_USER_CATEGORIES, cbFindOneUserCateg);
+app.put(UserCategAPI.UPDATE_ONE_USER_CATEGORIES, cbUpdateOneUserCateg);
 
 //Listen port
 app.listen(3030, (req, res) => {
