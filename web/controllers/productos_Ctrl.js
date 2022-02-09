@@ -30,60 +30,56 @@ const productos_Ctrl = {
     },
     modifyProd: (req, res) => {
         db.Products.findOne({ where: { prod_id: req.params.id } })
-        .then((product) => res.render('editarProd', { product: product})
-        .catch((e) => console.log(e)));
+        .then((product) => {
+            db.ProductsCateg.findAll()
+            .then((categories) => res.render('editarProd', { product: product, categories: categories }))
+            .catch((e) => console.log(e));
+        })
+        .catch((e) => console.log(e));
+    },
+    updateProd: (req, res) => {
+        db.Products.update({
+            name: req.body.name,
+            price: req.body.price,
+            discount: req.body.discount,
+            prod_categ_id: req.body.prod_categ_id,
+            image: req.body.image,
+            description: req.body.description
+        },
+        { where: { prod_id: req.params.id } })
+        .catch((e) => console.log(e));
+        res.redirect('/productos');
+    },
+    createForm: (req, res) => {
+        db.ProductsCateg.findAll()
+        .then((categories) => res.render('crearProd', { categories: categories }))
+        .catch((e) => console.log(e));
+    },
+    createProd: (req, res) => {
+        db.Products.create({
+            name: req.body.name,
+            price: req.body.price,
+            discount: req.body.discount,
+            prod_categ_id: req.body.prod_categ_id,
+            image: req.body.image,
+            description: req.body.description
+        })
+        .catch((e) => console.log(e));
+        res.redirect('/productos');
+    },
+    deleteProd: (req, res) => {
+        db.Products.destroy({ where: { prod_id: req.params.id } })
+        .catch((e) => console.log(e));
+        res.redirect('/productos');
     }
-    // ,
-    // listByCateg: (req, res) => {
-    //     db.Products.findAll({ where: { prod_categ_id: req.params.id } })
-    //     .then((bycateg) => res.render('categories', { bycateg: bycateg }))
-    //     .catch((e) => console.log(e));
-    // }
-    // listByCateg: (req, res) => {
-    //     db.Products.findAll({ where: { prod_categ_id: req.params.id } })
-    //     .then((bycateg) => res.status(200).json({ bycateg: bycateg }))
-    //     .catch((e) => console.log(e));
-    // }
 }
+
+// UPDATE `sweetdreams`.`products` SET `price` = '1450', `discount` = '20' WHERE (`prod_id` = '10');
+
 
 module.exports = productos_Ctrl;
 
-// const data = require("../data/productos.json");
-// const dataPath = path.resolve(__dirname, "../data/productos.json")
 
-// //Obtener listado de productos
-// router.get("/", (req, res) => { res.render("listadoProductos", { tortas: data, user: req.session.userLogged }) });
-
-// //Detalle de un producto particular
-// //router.get("/productos /: id ", (req, res) => {});
-// router.get("/detalle/:id", (req, res) => {
-    
-//     //let productosJson = fs.readFileSync("../data/productos.json", "utf-8");
-//     //let prodJS = JSON.parse(productosJson);
-//     let productoID = data.filter(producto => {
-//         producto.id == req.params.id;
-//     });
-    
-//     //Abraham - lo agregue para poder leer el id del detalle de producto
-//     let reqID = req.params.id;
-
-//     res.render("detalleDelProducto", {
-//         producto: data,
-//         reqID: reqID,
-//         user: req.session.userLogged
-//     });
-// }); 
-
-// //Formulario de creación de productos
-// router.get("/crear", (req, res) => {
-//     if (req.session.userLogged != undefined){
-//         res.render("crearProd", {
-//             user: req.session.userLogged
-//         });
-//     }else{
-//         res.render("login")
-//     }
-// });
 
 // //Acción de creación(a donde se envía el formulario)
 // router.post("/crear", (req, res) => {

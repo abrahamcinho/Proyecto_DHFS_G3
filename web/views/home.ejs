@@ -4,15 +4,9 @@
         <div class="categorias">
             <h2>Categorías</h2>
             <ul>
-                <li><a href="#">Tortas</a></li>
-                <li><a href="#">Cupcakes</a></li>
-                <li><a href="#">Facturas</a></li>
-                <li><a href="#">Tortas</a></li>
-                <li><a href="#">Cupcakes</a></li>
-                <li><a href="#">Facturas</a></li>
-                <li><a href="#">Tortas</a></li>
-                <li><a href="#">Cupcakes</a></li>
-                <li><a href="#">Facturas</a></li>
+                <% for (let i = 0; i < categories.length; i++) { %>
+                    <li><a href="/categorie/<%=categories[i].prod_categ_id%>"><%= categories[i].name %></a></li>
+                <% };%>
             </ul>
         </div>
         <div class="aside-destacado">

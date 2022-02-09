@@ -74,6 +74,23 @@ Frustrarnos cuando todo se rompa, porque nos pisamos los avances en el Repo
 Frustrarnos al no saber hacer algo
 
 
+## Retro: Sprint 5
+
+1. Comenzar a hacer
+Organizar el tablero de trabajo antes de comenzar cada sprint, asi se pueden repartir las actividades mas eficientemente
+
+2. Hacer más
+Reuniones y feedbacks entre el grupo. Tratar de comenzar antes con el sprint para poder corregir errores.
+Buscar hacer copias locales, asi no se pisan y se pierde alguna informacion.
+
+3. Continuar haciendo
+Dedicandonos y poniendo el esfuerzo y ganas que tenemos siempre para afrontar el sprint. Apoyarnos y seguir adelante resolviendo los errores y problemas en el codigo.
+
+4. Hacer menos
+Procrastinar, esperar afrontar el sprint muy cerca de la fecha de entrega.
+
+5. Dejar de hacer
+Frustrarnos al no saber hacer algo y no conversarlo con el grupo.
 
 ## ¿Cómo acceder a Carga y edición de productos?
 
