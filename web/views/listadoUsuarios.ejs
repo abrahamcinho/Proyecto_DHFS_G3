@@ -1,75 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<%- include("./partials/head") %>
-    <%- include("./partials/header") %>
-
-        <body>
-            <h2>Presione para agregar producto</h2>
-            <a href="/productos/crear/">Crear producto</a>
-            <h2 class="prod_tittle">Listado de Productos</h2>
-            <div class="products_container"> 
-                <div class="products_subcontainer">
-                    <div class="tittle_container">
-                        <h4>Tortas</h4>
-                    </div>
-                    <div class="product_bigbox">
-                        <% tortas.forEach(producto => {%>
-                        <% if (producto.categoria == "Tortas") {%>
-                        <div class="product_box">
-                            <img src="<%= producto.imagen %>">
-                            <h5><%= producto.nombre %></h5>
-                            <p>Precio: $<%= producto.precio %></p>
-                            <a href="/productos/detalle/<%=producto.id%>">Ver detalle del producto</a>
-                            <a href="/productos/editar/<%=producto.id%>">Editar/Eliminar producto</a>
-                            <button name="boton" type="button">AÑADIR AL CARRITO</button>
-                        </div>
-                            <% } %>                    
-                        <% });%>
-                    </div>
-                </div>
-                <div class="products_subcontainer">
-                    <div class="tittle_container">
-                        <h4>Cupcakes</h4>
-                    </div>
-                    <div class="product_bigbox">
-                        <% tortas.forEach(producto => {%>
-                        <% if (producto.categoria == "Cupcakes") {%>
-                        <div class="product_box">
-                            <img src="<%= producto.imagen %>">
-                            <h5><%= producto.nombre %></h5>
-                            <p>Precio: $<%= producto.precio %></p>
-                            <a href="/productos/detalle/<%=producto.id%>">Ver detalle del producto</a>
-                            <a href="/productos/editar/<%=producto.id%>">Editar/Eliminar producto</a>
-                            <button name="boton" type="button">AÑADIR AL CARRITO</button>
-                        </div>
-                            <% } %>                    
-                        <% });%>
-                    </div>
-                </div>
-                <div class="products_subcontainer">
-                    <div class="tittle_container">
-                        <h4>Facturas</h4>
-                    </div>
-                    <div class="product_bigbox">
-                        <% tortas.forEach(producto => {%>
-                        <% if (producto.categoria == "Facturas") {%>
-                        <div class="product_box">
-                            <img src="<%= producto.imagen %>">
-                            <h5><%= producto.nombre %></h5>
-                            <p>Precio: $<%= producto.precio %></p>
-                            <a href="/productos/detalle/<%=producto.id%>">Ver detalle del producto</a>
-                            <a href="/productos/editar/<%=producto.id%>">Editar/Eliminar producto</a>
-                            <button name="boton" type="button">AÑADIR AL CARRITO</button>
-                        </div>
-                            <% } %>                    
-                        <% });%>
-                    </div>
-                </div>               
-            </div>
-        </body>
-
-        <%- include("./partials/footer") %>
-            <%- include("./partials/scripts") %>
-
-</html>
+<%- include("./partials/header") %>
+<h2>Usuarios</h2>
+<ul>
+    <% for (let i = 0; i < users.length; i++) { %>
+        <li>
+          <a href="/usuarios/<%=users[i].user_id %> ">
+            <%= users[i].first_name + ' ' + users[i].last_name %>
+          </a>
+        </li>
+      <% } %>
+</ul>
+<%- include("./partials/footer") %>

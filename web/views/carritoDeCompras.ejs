@@ -1,70 +1,49 @@
-<!DOCTYPE html>
-
-<!-- <head>
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="stylesheet" href="/public/css/carritoDeCompras.css">
-    <link rel="stylesheet" href="/public/css/detalleDelProducto.css">
-    <link rel="stylesheet" href="/public/css/register.css">
-    <link rel="stylesheet" href="/public/css/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head> -->
-<%- include("./partials/head") %>
-    <%- include("./partials/header") %>
-
-
-        <body>
-            <h2 class="carrito-title">Carrito</h2>
-            <div class="grid">
-                <span><strong>Producto</strong></span>
-                <span><strong>Precio por unidad</strong></span>
-                <span><strong>Cantidad</strong></span>
-                <span><strong>Subtotal</strong></span>
-                <span><img src="public/images/torta-sofia.jpg"><label>Torta Sofia</label></span>
-                <span>$2.400,00</span>
-                <span><select name = "cantidad">
+<%- include("./partials/header") %>
+<h2 class="carrito-title">Carrito</h2>
+<div class="grid">
+    <span><strong>Producto</strong></span>
+    <span><strong>Precio por unidad</strong></span>
+    <span><strong>Cantidad</strong></span>
+    <span><strong>Subtotal</strong></span>
+    <span><img src="public/images/torta-sofia.jpg"><label>Torta Sofia</label></span>
+    <span>$2.400,00</span>
+    <span><select name="cantidad">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
         </select></span>
-                <span>$2.400,00</span>
-                <span><img src="public/images/torta-lucia.jpg"><label>Torta Lucia</label></span>
-                <span>$2.500,00</span>
-                <span><select name = "cantidad">
+    <span>$2.400,00</span>
+    <span><img src="public/images/torta-lucia.jpg"><label>Torta Lucia</label></span>
+    <span>$2.500,00</span>
+    <span><select name="cantidad">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
         </select></span>
-                <span>$2.500,00</span>
-                <span><img src="public/images/torta-emma.jpg"><label>Torta Emma</label></span>
-                <span>$2.200,00</span>
-                <span><select name = "cantidad">
+    <span>$2.500,00</span>
+    <span><img src="public/images/torta-emma.jpg"><label>Torta Emma</label></span>
+    <span>$2.200,00</span>
+    <span><select name="cantidad">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
         </select></span>
-                <span>$2.200,00</span>
-                <span></span>
-                <span></span>
-                <span><strong>Subtotal</strong></span>
-                <span><strong>$2.200,00</strong></span>
-                <span></span>
-                <span></span>
-                <span><strong>Impuestos</strong></span>
-                <span><strong>$2.200,00</strong></span>
-                <span></span>
-                <span></span>
-                <span><strong>Total</strong></span>
-                <span><strong>$2.200,00</strong></span>
-            </div>
-            <div class="botones">
-                <button class="boton_carrito" type="reset">Volver</button>
-                <button class="boton_carrito" type="submit">Comprar</button>
-            </div>
-        </body>
-        <%- include("./partials/footer") %>
-        <%- include("./partials/scripts") %>
-
-    </html>
+    <span>$2.200,00</span>
+    <span></span>
+    <span></span>
+    <span><strong>Subtotal</strong></span>
+    <span><strong>$2.200,00</strong></span>
+    <span></span>
+    <span></span>
+    <span><strong>Impuestos</strong></span>
+    <span><strong>$2.200,00</strong></span>
+    <span></span>
+    <span></span>
+    <span><strong>Total</strong></span>
+    <span><strong>$2.200,00</strong></span>
+</div>
+<div class="botones">
+    <button class="boton_carrito" type="reset">Volver</button>
+    <button class="boton_carrito" type="submit">Comprar</button>
+</div>
+<%- include("./partials/footer") %>

@@ -1,93 +1,83 @@
-<!DOCTYPE html>
-
-<%- include("./partials/head") %>
-    <%- include("./partials/header") %>
-
-        <body>
-            <div class="main-container">
-                <aside class="left-col">
-                    <div class="categorias">
-                        <h2>Categorías</h2>
-                        <ul>
-                            <li><a href="#">Tortas</a></li>
-                            <li><a href="#">Cupcakes</a></li>
-                            <li><a href="#">Facturas</a></li>
-                            <li><a href="#">Tortas</a></li>
-                            <li><a href="#">Cupcakes</a></li>
-                            <li><a href="#">Facturas</a></li>
-                            <li><a href="#">Tortas</a></li>
-                            <li><a href="#">Cupcakes</a></li>
-                            <li><a href="#">Facturas</a></li>
-                        </ul>
-                    </div>
-                    <div class="aside-destacado">
-                        <img src="/public/images/torta-lucia.jpg">
-                        <div class="mask">
-                            <h2 class="product-title">Torta Lucia</h2>
-                            <span class="description">
-                        Bizcocho de vainilla.
-                        Puede seleccionar entre distintos rellenos.
-                        Cubierta de pasta ballina color rosa pastel.
-                        Decorada con macarons y figuras comestibles de azucar glass.
-                        Puede selecionar distintos tamaños.
-                    </span>
-                            <span class="price">2500,00 $</span>
-                        </div>
-                    </div>
-                </aside>
-                <div class="main-content">
-                    <div class="main-carrousel">
-                        <div class="slideshow-container">
-                            <div class="mySlides">
-                                <img src="/public/images/postre-2-a.jpg">
-                            </div>
-
-                            <div class="mySlides">
-                                <img src="/public/images/postre-3-a.jpg">
-                            </div>
-
-                            <div class="mySlides">
-                                <img src="/public/images/postre-1-a.jpg">
-                            </div>
-
-                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        </div>
-                        <br>
-                        <div style="text-align:center">
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
-                        </div>
-                    </div>
-                    <div class="main-products">
-                        <article class="product">
-                            <div class="mask">
-                                <h2 class="product-title">Torta Sofia</h2>
-                                <a href="#"><img src="/public/images/torta-sofia.jpg"></a>
-                                <span class="price">2400,00 $</span>
-                            </div>
-                        </article>
-                        <article class="product">
-                            <div class="mask">
-                                <h2 class="product-title">Torta Lucia</h2>
-                                <a href="#"><img src="/public/images/torta-lucia.jpg"></a>
-                                <span class="price">2500,00 $</span>
-                            </div>
-                        </article>
-                        <article class="product">
-                            <div class="mask">
-                                <h2 class="product-title">Torta Emma </h2>
-                                <a href="#"><img src="/public/images/torta-emma.jpg"></a>
-                                <span class="price">2200,00 $</span>
-                            </div>
-                        </article>
-
-                    </div>
+<%- include("./partials/header") %>
+<div class="main-container">
+    <aside class="left-col">
+        <div class="categorias">
+            <h2>Categorías</h2>
+            <ul>
+                <li><a href="#">Tortas</a></li>
+                <li><a href="#">Cupcakes</a></li>
+                <li><a href="#">Facturas</a></li>
+                <li><a href="#">Tortas</a></li>
+                <li><a href="#">Cupcakes</a></li>
+                <li><a href="#">Facturas</a></li>
+                <li><a href="#">Tortas</a></li>
+                <li><a href="#">Cupcakes</a></li>
+                <li><a href="#">Facturas</a></li>
+            </ul>
+        </div>
+        <div class="aside-destacado">
+            <img src="/public/images/torta-lucia.jpg">
+            <div class="mask">
+                <h2 class="product-title">Torta Lucia</h2>
+                <span class="description">
+                    Bizcocho de vainilla.
+                    Puede seleccionar entre distintos rellenos.
+                    Cubierta de pasta ballina color rosa pastel.
+                    Decorada con macarons y figuras comestibles de azucar glass.
+                    Puede selecionar distintos tamaños.
+                </span>
+                <span class="price">2500,00 $</span>
+            </div>
+        </div>
+    </aside>
+    <div class="main-content">
+        <div class="main-carrousel">
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="/public/images/postre-2-a.jpg">
                 </div>
 
+                <div class="mySlides">
+                    <img src="/public/images/postre-3-a.jpg">
+                </div>
+
+                <div class="mySlides">
+                    <img src="/public/images/postre-1-a.jpg">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-        </body>
-        <%- include("./partials/footer") %>
-        <%- include("./partials/scripts") %>
-</html>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <div class="main-products">
+            <article class="product">
+                <div class="mask">
+                    <h2 class="product-title">Torta Sofia</h2>
+                    <a href="#"><img src="/public/images/torta-sofia.jpg"></a>
+                    <span class="price">2400,00 $</span>
+                </div>
+            </article>
+            <article class="product">
+                <div class="mask">
+                    <h2 class="product-title">Torta Lucia</h2>
+                    <a href="#"><img src="/public/images/torta-lucia.jpg"></a>
+                    <span class="price">2500,00 $</span>
+                </div>
+            </article>
+            <article class="product">
+                <div class="mask">
+                    <h2 class="product-title">Torta Emma </h2>
+                    <a href="#"><img src="/public/images/torta-emma.jpg"></a>
+                    <span class="price">2200,00 $</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+<%- include("./partials/footer") %>

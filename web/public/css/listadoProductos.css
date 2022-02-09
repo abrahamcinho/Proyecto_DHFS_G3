@@ -16,11 +16,10 @@
 
 .product_bigbox {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
-    
 }
 
 .tittle_container {
@@ -47,6 +46,17 @@
     border-radius: 5px;
     background-color: #6f1d57;
     color: #fffafa;
+}
+
+.product_box button a {
+    text-decoration: none;
+    color: #fffafa;
+    padding: .5rem 1rem;
+}
+
+.button_margin {
+    margin-top: 10px;
+    height: 2.5rem;
 }
 
 .tittle_container {

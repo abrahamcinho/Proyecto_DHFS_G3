@@ -1,8 +1,9 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
+const register_Ctrl = require('../controllers/register_Ctrl');
 
-const REGISTER_PAGE = "/views/register.ejs";
-
-router.get('/', (req, res) => res.sendFile(path.join(__dirname, REGISTER_PAGE)));
+//Create
+router.get('/', register_Ctrl.selectCateg);
+router.post('/', register_Ctrl.createUser);
 
 module.exports = router;

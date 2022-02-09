@@ -1,68 +1,45 @@
-const express = require("express");
-const router = express.Router();
-var fs = require('fs');
+const db = require('../config/dataBase_config');
 var path = require("path");
-//Llamando al JSON
-const data = require("../data/usuarios.json");
-const dataPath = path.resolve(__dirname, "../data/usuarios.json")
-const bcryptjs = require("bcryptjs");
 const multer = require("multer");
 
-//configuracion de multer
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "./public/images/avatars");
+const register_Ctrl = {
+    selectCateg: (req, res) => {
+        db.UsersCateg.findAll()
+            .then((categories) => res.render('register', { categories: categories }))
+            .catch((e) => console.log(e));
     },
-    filename: (req, file, cb) => {
-        let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
-        cb(null, fileName);
-    }
-});
-
-const uploadFile = multer({ storage });
-
-router.get("/", (req, res) => res.render("register"));
-
-//Registro de Usuario
-router.post("/", uploadFile.single("avatar"), (req, res) => {
-    let usuario = findByField("email", req.body.email);
-    if (usuario) {
-        return res.render("register", {
-            errors: {
-                email: {
-                    msj: "Este email ya esta registrado"
-                }
+    createUser: (req, res) => {
+        //configuracion de multer
+        const storage = multer.diskStorage({
+            destination: (req, file, cb) => {
+                cb(null, "./public/images/avatars");
             },
-            oldData: req.body
+            filename: (req, file, cb) => { 
+                let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
+                cb(null, fileName);
+            }
         });
-    } else {
-        usuario = {
-            id: data[data.length - 1].id + 1,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            //password: req.body.password,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            category: req.body.category,
-            avatar: req.file.filename
-        };
 
-        data.push(usuario);
-        var prodJson = JSON.stringify(data);
-        fs.writeFileSync(dataPath, prodJson);
-        //res.send("Registro Exitoso")
-        res.redirect("/login");
-    }
-});
+        const uploadFile = multer({ storage });
 
-function findByField(field, text) {
-    let todosLosUsuarios = findAll();
-    let usuarioEncontrado = todosLosUsuarios.find(oneUser => oneUser[field] === text);
-    return usuarioEncontrado;
+        uploadFile.single('avatar');
+
+        db.Users.findOne({ where: { email: req.body.email } })
+            .then((user) => {
+                user ? res.render('register', { msj: "Este email ya esta registrado" }) :
+                db.Users.create({
+                    first_name: req.body.nombre,
+                    last_name: req.body.apellido,
+                    email: req.body.email,
+                    password: req.body.password,
+                    avatar: 'avatar',
+                    users_categ_id: req.body.categoria
+                })
+                .then(() => res.redirect('login'), { msj: "Registro exitoso" })
+                .catch((e) => console.log(e));
+            })
+            .catch((e) => console.log(e));
+    },
 }
 
-function findAll() {
-    return JSON.parse(fs.readFileSync(dataPath, "utf-8"));
-}
-
-module.exports = router;
+module.exports = register_Ctrl;
