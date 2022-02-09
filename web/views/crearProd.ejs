@@ -19,10 +19,8 @@
                     <option name="prod_categ_id" value="<%= categorie.prod_categ_id %>"><%= categorie.name %></option>
                 <% });%>
             </select>
-            <form method="POST" action="action.cgi" enctype="multipart/form-data">
-                <input type="file" name="image">
-            </form>
-            <button type="submit">Crear</button>
+            <form method="POST" action="action.cgi" enctype="multipart/form-data"><input type="file" name="image"></form>
+            <form method="POST" action="/productos/create"><button type="submit">Crear</button></form>
         </form>
     </div>
 </div>
