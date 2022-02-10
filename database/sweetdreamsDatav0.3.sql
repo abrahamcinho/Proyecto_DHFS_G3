@@ -92,23 +92,24 @@ CREATE TABLE `products` (
   `price` int(20) NOT NULL,
   `discount` int(5) NOT NULL,
   `prod_categ_id` int(10) UNSIGNED NOT NULL,
-  `image` varchar(255) NOT NULL
+  `image` varchar(255) NOT NULL, 
+  `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`prod_id`, `name`, `price`, `discount`, `prod_categ_id`, `image`) VALUES
-(1, 'Sofía', 2400, 25, 1, '...'),
-(2, 'Lucía', 2500, 1, 1, '...'),
-(3, 'Emma', 2200, 13, 1, ''),
-(4, 'Chocolate', 1400, 31, 2, '...'),
-(5, 'Red Velvet', 2500, 42, 2, ''),
-(6, 'Caramelo', 1200, 3, 2, ''),
-(7, 'Manzanita de hojaldre', 600, 18, 3, '...'),
-(8, 'Palmerita', 500, 31, 3, ''),
-(9, 'Caracola', 300, 39, 3, '');
+INSERT INTO `products` (`prod_id`, `name`, `price`, `discount`, `prod_categ_id`, `image`, `description`) VALUES
+(1, 'Sofía', 2400, 25, 1, '/public/images/torta-sofia.jpg', 'Torta Sofia'),
+(2, 'Lucía', 2500, 1, 1, '/public/images/torta-lucia.jpg', 'Torta Lucia'),
+(3, 'Emma', 2200, 13, 1, '/public/images/torta-emma.jpg', 'Torta Emma'),
+(4, 'Chocolate', 1400, 31, 2, '/public/images/galleta-1.jpeg', 'Cupcake de Chocolate'),
+(5, 'Red Velvet', 2500, 42, 2, '/public/images/galleta-2.jpeg', 'Cupcake Red Velvet'),
+(6, 'Caramelo', 1200, 3, 2, '/public/images/galleta-3.jpeg', 'Cupcake de Caramelo'),
+(7, 'Manzanita de hojaldre', 600, 18, 3, '/public/images/factura-1.png', 'Factura Fina - Manzanita de Hojaldre'),
+(8, 'Palmerita', 500, 31, 3, '/public/images/factura-1.png', 'Factura Fina - Palmerita'),
+(9, 'Caracola', 300, 39, 3, '/public/images/factura-1.png', 'Factura Fina - Caracola');
 
 -- --------------------------------------------------------
 
