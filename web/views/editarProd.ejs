@@ -1,50 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<%- include("./partials/head") %>
-    <%- include("./partials/header") %>
-
-        <body>
-            <form method="POST" action="http://localhost:3030/productos/editar">
-                <li>
-                    <input type="text" name="producto.nombre" placeholder="agregá el nombre del producto">
-                    <% p
-                </li>
-                <li>
-                    <input type="number" name="producto.precio" placeholder="agregá el precio del producto">
-                </li>
-                <li>
-                    <input type="number" name="producto.descuento" placeholder="agregá el descuento del producto">
-                </li>
-                <li>
-                    <input type="text" name="producto.descripcion" placeholder="agregá descripcion">
-                </li>
-                <li>
-                    <input type="text" name="producto.categoria" placeholder="agregá la categoria del producto">
-                </li>
-                <li>
-                    <input type="text" name="producto.relleno_1" placeholder="agregá el relleno">
-                </li>
-                <li>
-                    <input type="text" name="producto.relleno_2" placeholder="agregá el relleno">
-                </li>
-                <li>
-                    <input type="text" name="producto.relleno_3" placeholder="agregá el relleno">
-                </li>
-                <li>
-                    <input type="number" name="producto.porcion_1" placeholder="agregá la cantidad de porciones">
-                </li>
-                <li>
-                    <input type="number" name="producto.porcion_2" placeholder="agregá la cantidad de porciones">
-                </li>
-                <input type="number" name="producto.porcion_3" placeholder="agregá la cantidad de porciones">
-
-                <input type="submit" value="Agregar poducto">
-            </form>
-
-        </body>
-        <%- include("./partials/footer") %>
-                        <%- include("./partials/scripts") %>
-
-</html>
+<%- include("./partials/header") %>
+<form class="form_edit" method="POST" action="/productos/edit/<%= product.prod_id %>">
+    <label for="Nombre">Nombre:</label>
+    <input type="text" name="name" value="<%= product.name %>">
+    <label for="Precio">Precio:</label>
+    <input type="number" value="<%= product.price %>" name="price">
+    <label for="Descuento">Descuento:</label>
+    <input type="number" value="<%= product.discount %>" name="discount">
+    <label for="Descripcion">Descripción:</label>
+    <input type="text" value="<%= product.description %>" name="description" >
+    <input type="text" value="<%= product.image %>" name="image" >
+    <label for="Categoria">Categoría:</label>  
+    <select name="categorie">
+        <% categories.forEach(categorie => {%>
+            <% if (categorie.prod_categ_id === product.prod_categ_id) {%>
+                <option value="<%= categorie.name %>" selected><%= categorie.name %></option>
+            <% } else {%>
+                <option value="<%= categorie.name %>"><%= categorie.name %></option>
+            <% }%>
+        <% });%>
+    </select>
+    <button type="submit" value="Aceptar">Aceptar</button>
+    <button type="cancel" value="Cancelar">Cancelar</button>
+</form>
+<form method="POST" action="/productos/delete/<%= product.prod_id %>">
+    <button type="submit">Eliminar</button>
+</form>
+<%- include("./partials/footer") %>

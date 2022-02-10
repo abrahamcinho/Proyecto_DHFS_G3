@@ -1,0 +1,18 @@
+<%- include("./partials/header") %>
+<h2 class="prod_tittle"><%= categorie.name %></h2>
+<div class="products_container">
+    <div class="products_subcontainer">
+            <div class="product_bigbox">
+                <% products.forEach(product => {%>
+                        <div class="product_box">
+                            <img src="<%= product.image %>">
+                            <h5><%= product.name %></h5>
+                            <p>Precio: $<%= product.price %></p>
+                            <a href="/productos/detail/<%=product.prod_id%>">Ver detalle del producto</a>
+                            <button class="button_margin" name="boton" type="button"><a href="/productos/detail/<%=product.prod_id%>">AÑADIR AL CARRITO</a></button>
+                        </div>
+		<% }); %>
+            </div>
+    </div>
+</div>
+<%- include("./partials/footer") %>

@@ -1,85 +1,57 @@
-<!DOCTYPE html>
-
 <!--Abraham - Se muestra el detalle del producto segun el id de la URL-->
-<%- include("./partials/head") %>
-    <%- include("./partials/header") %>
+<%- include("./partials/header") %>
+<div class="dividirColumnas">
+    <section class="imagenes">
+        <div class="imagenProducto">
+            <img src="<%= product.image %>" alt="Producto">
+        </div>
+        <div class="imagenes_botones">
+            <img width="44" height="44" decoding="async" src="<%= product.image %>" class="ui-pdp-image" alt="<%= product.name %>">
+            <img width="44" height="44" decoding="async" src="<%= product.image %>" class="ui-pdp-image" alt="<%= product.name %>">
+        </div>
+    </section>
+    <section class="detalles-producto">
+        <h1><%= product.name %></h1>
+        <div class="precios">
+                <h3>$<%= product.price %></h3>
+                <h5><%= product.discount %>% OFF</h5>
+        </div>
+        <div class="listado">
+            <%= product.description %>
+        </div>
+        <form method="POST" action="/add/:id">
+            <label>Seleccione el relleno:</label>
+            <select class="estilo_cuadro" name="Rellenos disponibles">
+                <option value="Seleccione">Seleccione...</option>
+                <% flavors.forEach(flavor => {%>                    
+                    <option value="<%= flavor.name %>">
+                        <%= flavor.name %>
+                    </option>
+                <% });%>
+            </select>
+            <label>Seleccione el tamaño:</label>
+            <select class="estilo_cuadro" name="Tamaño">
+                <option value="Seleccione">Seleccione...</option>
+                <% sizes.forEach(size => {%>                    
+                    <option value="<%= size.name %>">
+                        <%= size.name %>
+                    </option>
+                <% });%>
+            </select>
+            <button class="boton_carrito" name="boton" type="submit">AÑADIR AL CARRITO</button>
+        </form>
+    </section>
+</div>
+<div class="prod">
+    <h3>Productos similares</h3>
+</div>
+<div class="productos_similares">
+    <div class="imagenes_prod_similares ">
+        <img src="/public/images/torta-sofia.jpg ">
+    </div>
 
-        <body>
-            <div class="dividirColumnas ">
-                <% producto.forEach(producto => {%>
-                    <% if(producto.id == reqID) {%>
-                <section class="imagenes ">
-                    <div class="imagenProducto ">
-                        <img src="<%= producto.imagen %>" alt="Producto ">
-                    </div>
-                    <div class="imagenes_botones ">
-                        <img width="44 " hei ght="44 " decoding="async " src="<%= producto.imagen %>" class="ui-pdp-image " alt="Imagen ">
-                        <img width="44 " hei ght="44 " decoding="async " src="<%= producto.imagen %>" class="ui-pdp-image " alt="Imagen1 ">
-                    </div>
-                </section>
-                <section class="detalles-producto ">
-                        <h1><%= producto.nombre %></h1>
-                        <div class="precios">
-                            <h3>$<%= producto.precio %></h3>
-                            <h5><%= producto.descuento %>% OFF</h5>
-                        </div>
-                        <div class="listado">
-                            <%= producto.descripcion %>
-                        </div>
-                        <!-- <form action="# " method="GET "></form> -->
-                        <form method="POST" action="/detalle/:id">
-                            <div>
-                                <label>Seleccione rellenos:</label>
-                                <select class="estilo_cuadro " name="Rellenos disponibles ">
-                                    <option value="producto.relleno_1 ">
-                                        <%= producto.relleno_1 %>
-                                    </option>
-                                    <option value="producto.relleno_2 ">
-                                        <%= producto.relleno_2 %>
-                                    </option>
-                                    <option value="producto.relleno_3 ">
-                                        <%= producto.relleno_3 %>
-                                    </option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label>Seleccione cantidad de porciones:</label>
-                                <select class="estilo_cuadro " name="Cantidad de porciones ">
-                                    <option value="producto.porcion_1 ">
-                                        <%= producto.porcion_1 %>
-                                    </option>
-                                    <option value="producto.porcion_2 ">
-                                        <%= producto.porcion_2 %>
-                                    </option>
-                                    <option value="producto.porcion_3 ">
-                                        <%= producto.porcion_3 %>
-                                    </option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <button class="boton_carrito " name="boton " type="submit">AÑADIR AL CARRITO</button>
-                            </div>
-                        </form>
-                        <% };%>
-                        <% });%>
-                </section>
-            </div>
-            <div class="prod ">
-                <h3>Productos similares</h3>
-            </div>
-            <div class="productos_similares ">
-                <div class="imagenes_prod_similares ">
-                    <img src="/public/images/torta-sofia.jpg ">
-                </div>
-
-                <div class="imagenes_prod_similares ">
-                    <img src="/public/images/torta-emma.jpg ">
-                </div>
-            </div>
-        </body>
-        <%- include("./partials/footer") %>
-        <%- include("./partials/scripts") %>
-
-</html>
+    <div class="imagenes_prod_similares ">
+        <img src="/public/images/torta-emma.jpg ">
+    </div>
+</div>
+<%- include("./partials/footer") %>

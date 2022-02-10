@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const users_Ctrl = require('../controllers/users_Ctrl');
 
-const USERS_PAGE = "/views/listadoUsuarios.ejs";
-
-router.get('/', (req, res) => res.sendFile(path.join(__dirname, USERS_PAGE)));
+//Consultas
+router.get('/', users_Ctrl.listAll);
+router.get('/:id', users_Ctrl.listOne);
 
 module.exports = router;

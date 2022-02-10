@@ -1,51 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<%- include("./partials/head") %>
-    <%- include("./partials/header") %>
-
-        <body>
-            <div class="container-crear-prod">
-                <div class="subcontainer-crear-prod">
-                    <h3 class="">Creación de producto</h3>
-                    <form method="POST" action="http://localhost:3030/productos/crear">
-                        <label>Nombre</label>
-                        <input type="text" name="nombre" placeholder="Ej: Chocotorta">
-                        <label>Precio (ARS-$)</label>
-                        <input type="text" name="precio" placeholder="Ej: 200">
-                        <label>Descuento (%)</label>
-                        <input type="text" name="descuento" placeholder="Ej: 15">
-                        <label>Descripcion</label>
-                        <textarea type="text" name="descripcion" placeholder="Ej: Esponjosa, dulce y con un sutil sabor a ron. Dulce de leche y trocitos de chocolate amargo."></textarea>
-                        <label>Categoria</label>
-                        <select>
-                                <option name="categoria" value="Tortas">Tortas</option>
-                                <option name="categoria" value="Cupcakes">Cupcakes</option>
-                                <option name="categoria" value="Facturas">Facturas</option>
-                            </select>
-                        <label>Relleno #1</label>
-                        <input type="text" name="relleno_1" placeholder="Ej: Chocolate con nuez">
-                        <label>Relleno #2</label>
-                        <input type="text" name="relleno_2" placeholder="Ej: Frutos Rojos">
-                        <label>Relleno #3</label>
-                        <input type="text" name="relleno_3" placeholder="Ej: Crema Americana">
-                        <label>Porciones #1</label>
-                        <input type="number" name="porcion_1" placeholder="Ej: 2">
-                        <label>Porciones #2</label>
-                        <input type="number" name="porcion_2" placeholder="EJ: 4">
-                        <label>Porciones #3</label>
-                        <input type="number" name="porcion_3" placeholder="Ej: 12">
-                        <!--<input type="submit" value="Agregar poducto">-->
-                        <form method="post" action="action.cgi" enctype="multipart/form-data">
-                            <input type="file" name="usuario">
-                        </form>
-                        <button type="submit"><span>Crear</span></button>
-                    </form>
-                </div>
-            </div>
-        </body>
-        <%- include("./partials/footer") %>
-            <%- include("./partials/scripts") %>
-
-</html>
+<%- include("./partials/header") %>
+<div class="container-crear-prod">
+    <div class="subcontainer-crear-prod">
+        <h3>Creación de producto</h3>
+        <form method="POST" action="/productos/create">
+            <label>Nombre</label>
+            <input type="text" name="name" placeholder="Ej: Chocotorta">
+            <label>Precio (ARS-$)</label>
+            <input type="text" name="price" placeholder="Ej: 200">
+            <label>Descuento (%)</label>
+            <input type="text" name="discount" placeholder="Ej: 15">
+            <label>Descripcion</label>
+            <textarea type="text" name="description"
+                placeholder="Ej: Esponjosa, dulce y con un sutil sabor a ron. Dulce de leche y trocitos de chocolate amargo."></textarea>
+            <label>Categoria</label>
+            <select>
+                <option>Seleccione...</option>
+                <% categories.forEach(categorie => {%>
+                    <option name="prod_categ_id" value="<%= categorie.prod_categ_id %>"><%= categorie.name %></option>
+                <% });%>
+            </select>
+            <form method="POST" action="action.cgi" enctype="multipart/form-data"><input type="file" name="image"></form>
+            <form method="POST" action="/productos/create"><button type="submit">Crear</button></form>
+        </form>
+    </div>
+</div>
+<%- include("./partials/footer") %>

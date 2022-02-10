@@ -1,43 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-    
-</head> -->
-<%- include("./partials/head") %>
-    <%- include("./partials/header") %>
-
-        <body>
-            <h2 class="prod_title">Carga y Edición de Productos</h2>
-
-            <div class="boton">
-                <button type=" " class="boton_Agregar"><a href="/productos/crear">Agregar Productos</a></i></button>
-            </div>
-
-
-            <div class="grid">
-                <span><strong>Producto</strong></span>
-                <span><strong>Precio</strong></span>
-                <span><strong>Eliminar</strong></span>
-                <span><strong>Editar</strong></span>
-                <span>
-                    <form method="POST" action="/eliminar?_method=DELETE">
-                        <input name="producto" placeholder="elim">
-                    </form>
-                    <img src="public/images/torta-sofia.jpg"><label>Torta Sofia</label></span>
-                <span>$2.400,00</span>
-                <span><button type=" " class="boton_Eliminar "><i class="fas fa-trash-alt "></i></button></span>
-                <span><button type=" " class="boton_Editar "><i class="fas fa-edit "></i></i></button></span>
-                <span><img src="public/images/torta-lucia.jpg"><label>Torta Lucia</label></span>
-                <span>$2.500,00</span>
-                <span><button type=" " class="boton_Eliminar "><i class="fas fa-trash-alt "></i></button></span>
-                <span><button type=" " class="boton_Editar "><i class="fas fa-edit "></i></i></button></span>
-                <span><img src="public/images/torta-emma.jpg"><label>Torta Emma</label></span>
-                <span>$2.200,00</span>
-                <span><button type=" " class="boton_Eliminar "><i class="fas fa-trash-alt "></i></button></span>
-                <span><button type=" " class="boton_Editar "><i class="fas fa-edit "></i></i></button></span>
-            </div>
-
-        </body>
-        <%- include("./partials/footer") %>
-            <%- include("./partials/scripts") %>
-
-</html>
+<%- include("./partials/header") %>
+<h2 class="prod_title">Carga y Edición de Productos</h2>
+<div class="boton">
+    <button type=" " class="boton_Agregar"><a href="/productos/crear">Agregar Productos</a></i></button>
+</div>
+<div class="grid">
+    <span><strong>Producto</strong></span>
+    <span><strong>Precio</strong></span>
+    <span><strong>Eliminar</strong></span>
+    <span><strong>Editar</strong></span>
+    <span>
+        <form method="POST" action="/eliminar?_method=DELETE">
+            <input name="producto" placeholder="elim">
+        </form>
+        <img src="public/images/torta-sofia.jpg"><label>Torta Sofia</label>
+    </span>
+    <span>$2.400,00</span>
+    <span><button type=" " class="boton_Eliminar "><i class="fas fa-trash-alt "></i></button></span>
+    <span><button type=" " class="boton_Editar "><i class="fas fa-edit "></i></i></button></span>
+    <span><img src="public/images/torta-lucia.jpg"><label>Torta Lucia</label></span>
+    <span>$2.500,00</span>
+    <span><button type=" " class="boton_Eliminar "><i class="fas fa-trash-alt "></i></button></span>
+    <span><button type=" " class="boton_Editar "><i class="fas fa-edit "></i></i></button></span>
+    <span><img src="public/images/torta-emma.jpg"><label>Torta Emma</label></span>
+    <span>$2.200,00</span>
+    <span><button type=" " class="boton_Eliminar "><i class="fas fa-trash-alt "></i></button></span>
+    <span><button type=" " class="boton_Editar "><i class="fas fa-edit "></i></i></button></span>
+</div>
+<%- include("./partials/footer") %>

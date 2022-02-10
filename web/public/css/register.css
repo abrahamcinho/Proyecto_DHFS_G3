@@ -37,12 +37,16 @@
 	font-size: 14px;
 	color: bisque;
 }
-.conditions a, .have_account a{
+
+.conditions a,
+.have_account a {
 	font-weight: bold;
-	color:#e8789a;
+	color: #e8789a;
 }
-.conditions a:hover, .have_account a:hover{
-	color:#fffafa;
+
+.conditions a:hover,
+.have_account a:hover {
+	color: #fffafa;
 }
 
 .register_subcontainer button {
@@ -59,24 +63,28 @@
 .create_account {
 	margin-bottom: 1.5rem;
 }
+
 /*Mobile*/
-@media(max-width:576px){
-	.register_subcontainer{
+@media(max-width:576px) {
+	.register_subcontainer {
 		min-width: auto;
 		width: 100%;
 		margin: 30px;
-		padding:2rem 1rem;
+		padding: 2rem 1rem;
 	}
-	.login_pass_container i{
-		padding:0 2px;
+
+	.login_pass_container i {
+		padding: 0 2px;
 	}
 }
+
 /*Mobile Small*/
-@media(max-width:419px){
-	.register_subcontainer{
-		padding:1rem 0.5rem;
+@media(max-width:419px) {
+	.register_subcontainer {
+		padding: 1rem 0.5rem;
 	}
-	.login_pass_container a{
+
+	.login_pass_container a {
 		text-align: center;
 	}
 }

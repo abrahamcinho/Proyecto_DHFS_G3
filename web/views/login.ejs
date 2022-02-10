@@ -1,35 +1,25 @@
-<!DOCTYPE html>
-
-<%- include("./partials/head") %>
-    <%- include("./partials/header") %>
-
-        <body>
-            <div class="login_container">
-                <div class="login_subcontainer">
-                    <h2>Mi cuenta</h2>
-                    <form action="http://localhost:3030/login" method="POST">
-                        <div class="login_pass_container">
-                            <div class="login">
-                                <i class="far fa-user"></i>
-                                <input type="text" name="email" placeholder="Login">
-                            </div>
-                            <div class="pass ">
-                                <i class="fas fa-key "></i>
-                                <input type="password" name="password" placeholder="Password">
-                            </div>
-                            <p class="remember">
-                                <input type="checkbox" id="remember" name="remember" value="1" />
-                                <label for="remember">Recordarme</label>
-                            </p>
-                            <a href="# ">¿Olvidaste tu contraseña?</a>
-                            <a href="/registro ">Registrarse</a>
-                            <button type="submit "><span>Ingresar</span></button>
-                    </form>
-                    </div>
+<%- include("./partials/header") %>
+<div class="login_container">
+    <div class="login_subcontainer">
+        <h2>Mi cuenta</h2>
+        <form action="http://localhost:3030/login" method="POST">
+            <div class="login_pass_container">
+                <div class="login">
+                    <i class="far fa-user"></i>
+                    <input type="text" name="email" placeholder="Login">
                 </div>
-            </div>
-        </body>
-        <%- include("./partials/footer") %>
-            <%- include("./partials/scripts") %>
-
-                </html>
+                <div class="pass ">
+                    <i class="fas fa-key "></i>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <p class="remember">
+                    <input type="checkbox" id="remember" name="remember" value="1" />
+                    <label for="remember">Recordarme</label>
+                </p>
+                <a href="# ">¿Olvidaste tu contraseña?</a>
+                <a href="/registro ">Registrarse</a>
+                <button type="submit "><span>Ingresar</span></button>
+        </form>
+    </div>
+</div>
+<%- include("./partials/footer") %>

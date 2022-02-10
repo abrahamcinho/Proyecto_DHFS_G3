@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `flavors`
 --
 
-CREATE TABLE `flavors` (
+CREATE TABLE `sweetdreams`.`flavors` (
   `flavor_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `flavors` (
 -- Volcado de datos para la tabla `flavors`
 --
 
-INSERT INTO `flavors` (`flavor_id`, `name`) VALUES
+INSERT INTO `sweetdreams`.`flavors` (`flavor_id`, `name`) VALUES
 (1, 'Crema chantilly con fresas y dulce de leche con nuez'),
 (2, 'Chocolate amargo y crema de frutos rojos'),
 (3, 'Mouse de limon y chocolate con nuez'),
@@ -53,7 +53,7 @@ INSERT INTO `flavors` (`flavor_id`, `name`) VALUES
 -- Estructura de tabla para la tabla `flavors_products`
 --
 
-CREATE TABLE `flavors_products` (
+CREATE TABLE `sweetdreams`.`flavors_products` (
   `flavor_prod_id` int(10) UNSIGNED NOT NULL,
   `prod_id` int(10) UNSIGNED NOT NULL,
   `flavor_id` int(10) UNSIGNED NOT NULL
@@ -63,7 +63,7 @@ CREATE TABLE `flavors_products` (
 -- Volcado de datos para la tabla `flavors_products`
 --
 
-INSERT INTO `flavors_products` (`flavor_prod_id`, `prod_id`, `flavor_id`) VALUES
+INSERT INTO `sweetdreams`.`flavors_products` (`flavor_prod_id`, `prod_id`, `flavor_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 1, 3),
@@ -86,7 +86,7 @@ INSERT INTO `flavors_products` (`flavor_prod_id`, `prod_id`, `flavor_id`) VALUES
 -- Estructura de tabla para la tabla `products`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE `sweetdreams`.`products` (
   `prod_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
   `price` int(20) NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`prod_id`, `name`, `price`, `discount`, `prod_categ_id`, `image`) VALUES
+INSERT INTO `sweetdreams`.`products` (`prod_id`, `name`, `price`, `discount`, `prod_categ_id`, `image`) VALUES
 (1, 'Sofía', 2400, 25, 1, '...'),
 (2, 'Lucía', 2500, 1, 1, '...'),
 (3, 'Emma', 2200, 13, 1, ''),
@@ -116,7 +116,7 @@ INSERT INTO `products` (`prod_id`, `name`, `price`, `discount`, `prod_categ_id`,
 -- Estructura de tabla para la tabla `products_categories`
 --
 
-CREATE TABLE `products_categories` (
+CREATE TABLE `sweetdreams`.`products_categories` (
   `prod_categ_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -125,7 +125,7 @@ CREATE TABLE `products_categories` (
 -- Volcado de datos para la tabla `products_categories`
 --
 
-INSERT INTO `products_categories` (`prod_categ_id`, `name`) VALUES
+INSERT INTO `sweetdreams`.`products_categories` (`prod_categ_id`, `name`) VALUES
 (1, 'Tortas'),
 (2, 'Cupcakes'),
 (3, 'Facturas');
@@ -136,7 +136,7 @@ INSERT INTO `products_categories` (`prod_categ_id`, `name`) VALUES
 -- Estructura de tabla para la tabla `sizes`
 --
 
-CREATE TABLE `sizes` (
+CREATE TABLE `sweetdreams`.`sizes` (
   `size_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -145,7 +145,7 @@ CREATE TABLE `sizes` (
 -- Volcado de datos para la tabla `sizes`
 --
 
-INSERT INTO `sizes` (`size_id`, `name`) VALUES
+INSERT INTO `sweetdreams`.`sizes` (`size_id`, `name`) VALUES
 (1, 'Individual'),
 (2, 'Mediana'),
 (3, 'Familiar');
@@ -156,7 +156,7 @@ INSERT INTO `sizes` (`size_id`, `name`) VALUES
 -- Estructura de tabla para la tabla `sizes_products`
 --
 
-CREATE TABLE `sizes_products` (
+CREATE TABLE `sweetdreams`.`sizes_products` (
   `size_prod_id` int(10) UNSIGNED NOT NULL,
   `prod_id` int(10) NOT NULL,
   `size_id` int(10) NOT NULL
@@ -166,7 +166,7 @@ CREATE TABLE `sizes_products` (
 -- Volcado de datos para la tabla `sizes_products`
 --
 
-INSERT INTO `sizes_products` (`size_prod_id`, `prod_id`, `size_id`) VALUES
+INSERT INTO `sweetdreams`.`sizes_products` (`size_prod_id`, `prod_id`, `size_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 1, 3),
@@ -189,7 +189,7 @@ INSERT INTO `sizes_products` (`size_prod_id`, `prod_id`, `size_id`) VALUES
 -- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `sweetdreams`.`users` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
@@ -203,7 +203,7 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `avatar`, `users_categ_id`) VALUES
+INSERT INTO `sweetdreams`.`users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `avatar`, `users_categ_id`) VALUES
 (1, 'Abraham', 'Marval', 'abrahamcinho@gmail.com', '1234', '...', 2);
 
 -- --------------------------------------------------------
@@ -212,7 +212,7 @@ INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, 
 -- Estructura de tabla para la tabla `users_categories`
 --
 
-CREATE TABLE `users_categories` (
+CREATE TABLE `sweetdreams`.`users_categories` (
   `users_categ_id` int(255) NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -221,7 +221,7 @@ CREATE TABLE `users_categories` (
 -- Volcado de datos para la tabla `users_categories`
 --
 
-INSERT INTO `users_categories` (`users_categ_id`, `name`) VALUES
+INSERT INTO `sweetdreams`.`users_categories` (`users_categ_id`, `name`) VALUES
 (1, 'usuario'),
 (2, 'administrador');
 
@@ -232,13 +232,13 @@ INSERT INTO `users_categories` (`users_categ_id`, `name`) VALUES
 --
 -- Indices de la tabla `flavors`
 --
-ALTER TABLE `flavors`
+ALTER TABLE `sweetdreams`.`flavors`
   ADD PRIMARY KEY (`flavor_id`);
 
 --
 -- Indices de la tabla `flavors_products`
 --
-ALTER TABLE `flavors_products`
+ALTER TABLE `sweetdreams`.`flavors_products`
   ADD PRIMARY KEY (`flavor_prod_id`),
   ADD KEY `flavors_products_prod_id` (`prod_id`) USING BTREE,
   ADD KEY `flavors_products_flavor_id` (`flavor_id`) USING BTREE;
@@ -246,26 +246,26 @@ ALTER TABLE `flavors_products`
 --
 -- Indices de la tabla `products`
 --
-ALTER TABLE `products`
+ALTER TABLE `sweetdreams`.`products`
   ADD PRIMARY KEY (`prod_id`),
   ADD KEY `products_prod_categ_id_fk` (`prod_categ_id`) USING BTREE;
 
 --
 -- Indices de la tabla `products_categories`
 --
-ALTER TABLE `products_categories`
+ALTER TABLE `sweetdreams`.`products_categories`
   ADD PRIMARY KEY (`prod_categ_id`);
 
 --
 -- Indices de la tabla `sizes`
 --
-ALTER TABLE `sizes`
+ALTER TABLE `sweetdreams`.`sizes`
   ADD PRIMARY KEY (`size_id`);
 
 --
 -- Indices de la tabla `sizes_products`
 --
-ALTER TABLE `sizes_products`
+ALTER TABLE `sweetdreams`.`sizes_products`
   ADD PRIMARY KEY (`size_prod_id`),
   ADD KEY `sizes_products_prod_id` (`prod_id`) USING BTREE,
   ADD KEY `sizes_products_size_id` (`size_id`) USING BTREE;
@@ -273,14 +273,14 @@ ALTER TABLE `sizes_products`
 --
 -- Indices de la tabla `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `sweetdreams`.`users`
   ADD PRIMARY KEY (`user_id`),
   ADD KEY `users_user_categ_id_fk` (`users_categ_id`) USING BTREE;
 
 --
 -- Indices de la tabla `users_categories`
 --
-ALTER TABLE `users_categories`
+ALTER TABLE `sweetdreams`.`users_categories`
   ADD PRIMARY KEY (`users_categ_id`);
 
 --
@@ -290,49 +290,49 @@ ALTER TABLE `users_categories`
 --
 -- AUTO_INCREMENT de la tabla `flavors`
 --
-ALTER TABLE `flavors`
+ALTER TABLE `sweetdreams`.`flavors`
   MODIFY `flavor_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `flavors_products`
 --
-ALTER TABLE `flavors_products`
+ALTER TABLE `sweetdreams`.`flavors_products`
   MODIFY `flavor_prod_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
-ALTER TABLE `products`
+ALTER TABLE `sweetdreams`.`products`
   MODIFY `prod_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `products_categories`
 --
-ALTER TABLE `products_categories`
+ALTER TABLE `sweetdreams`.`products_categories`
   MODIFY `prod_categ_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `sizes`
 --
-ALTER TABLE `sizes`
+ALTER TABLE `sweetdreams`.`sizes`
   MODIFY `size_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `sizes_products`
 --
-ALTER TABLE `sizes_products`
+ALTER TABLE `sweetdreams`.`sizes_products`
   MODIFY `size_prod_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `sweetdreams`.`users`
   MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `users_categories`
 --
-ALTER TABLE `users_categories`
+ALTER TABLE `sweetdreams`.`users_categories`
   MODIFY `users_categ_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 

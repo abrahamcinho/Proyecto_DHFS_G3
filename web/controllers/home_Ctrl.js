@@ -1,12 +1,11 @@
-const express = require("express");
-const router = express.Router();
+const db = require('../config/dataBase_config');
 
-router.get("/", (req, res) => {
-    //console.log("estoy en session");
-    //console.log(req.session);
-    res.render("home", {
-        user: req.session.userLogged
-    });
-});
+const home_Ctrl = {
+	listAll: (req, res) => {
+		db.ProductsCateg.findAll()
+		.then((categories) => res.render('home', { categories: categories}))
+		.catch((e) => console.log(e));
+	}
+};
 
-module.exports = router;
+module.exports = home_Ctrl;
