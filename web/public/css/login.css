@@ -11,7 +11,6 @@
 	font-weight: bold;
 	text-transform: capitalize;
 }
-
 .login_subcontainer {
 	display: flex;
 	justify-content: center;
@@ -24,21 +23,19 @@
 	background-color: #6f1d57;
 	min-width: 560px;
 }
-
 .login_pass_container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
 	border: 1px solid;
-	padding: 1.5rem;
+	padding: 3rem 4rem;
 }
-
 .login_pass_container input {
 	border-top: none;
 	border-left: none;
 	border-right: none;
-	margin-bottom: 2rem;
+	/* margin-bottom: 2rem; */
 	font-family: 'Quicksand', sans-serif;
 }
 
@@ -51,19 +48,15 @@
 	font-family: 'Quicksand', sans-serif;
 	color: #6f1d57;
 }
-
 .login,
 .pass {
 	width: 90%;
 	display: flex;
 	justify-content: space-around;
 }
-
 .login i {
 	height: 2rem;
-
 }
-
 .login_pass_container a{
 	font-weight: bold;
 	color:#e8789a;
@@ -71,6 +64,10 @@
 .login_pass_container a:hover{
 	color:#fffafa;
 }
+#errorEmailLogin, #errorPassLogin{
+	padding-bottom: 20px;
+}
+
 /*Mobile*/
 @media(max-width:576px){
 	.login_subcontainer{
