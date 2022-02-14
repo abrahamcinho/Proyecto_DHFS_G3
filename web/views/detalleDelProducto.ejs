@@ -1,5 +1,6 @@
 <!--Abraham - Se muestra el detalle del producto segun el id de la URL-->
 <%- include("./partials/header") %>
+<script src="/public/js/shoppingcart.js"></script>
 <div class="dividirColumnas">
     <section class="imagenes">
         <div class="imagenProducto">
@@ -19,9 +20,9 @@
         <div class="listado">
             <%= product.description %>
         </div>
-        <form method="POST" action="/add/:id">
+        <form>
             <label>Seleccione el relleno:</label>
-            <select class="estilo_cuadro" name="Rellenos disponibles">
+            <select class="estilo_cuadro" name="flavors">
                 <option value="Seleccione">Seleccione...</option>
                 <% flavors.forEach(flavor => {%>                    
                     <option value="<%= flavor.name %>">
@@ -30,7 +31,7 @@
                 <% });%>
             </select>
             <label>Seleccione el tamaño:</label>
-            <select class="estilo_cuadro" name="Tamaño">
+            <select class="estilo_cuadro" name="size">
                 <option value="Seleccione">Seleccione...</option>
                 <% sizes.forEach(size => {%>                    
                     <option value="<%= size.name %>">
@@ -38,7 +39,7 @@
                     </option>
                 <% });%>
             </select>
-            <button class="boton_carrito" name="boton" type="submit">AÑADIR AL CARRITO</button>
+            <button onClick="setFromInfo(this.form)" class="boton_carrito" name="boton" type="button">AÑADIR AL CARRITO</button>
         </form>
     </section>
 </div>

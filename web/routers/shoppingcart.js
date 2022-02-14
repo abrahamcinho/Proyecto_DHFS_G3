@@ -1,8 +1,8 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
+const carrito_Ctrl = require('../controllers/carrito_Ctrl');
 
-const CART_PAGE = "/views/carritoDeCompras.ejs";
-
-router.get('/', (req, res) => res.sendFile(path.join(__dirname, CART_PAGE)));
+//Consultas
+router.get('/', carrito_Ctrl.listAll);
 
 module.exports = router;

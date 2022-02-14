@@ -92,7 +92,22 @@ CREATE TABLE `products` (
   `price` int(20) NOT NULL,
   `discount` int(5) NOT NULL,
   `prod_categ_id` int(10) UNSIGNED NOT NULL,
-  `image` varchar(255) NOT NULL
+  `image` varchar(255) NOT NULL,
+  `description` varchar(355) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Estructura de tabla para la tabla `products`
+--
+
+CREATE TABLE `chart` (
+  `prod_id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `price` int(20) NOT NULL,
+  `discount` int(5) NOT NULL,
+  `prod_categ_id` int(10) UNSIGNED NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `description` varchar(355) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -100,15 +115,15 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`prod_id`, `name`, `price`, `discount`, `prod_categ_id`, `image`) VALUES
-(1, 'Sofía', 2400, 25, 1, '...'),
-(2, 'Lucía', 2500, 1, 1, '...'),
-(3, 'Emma', 2200, 13, 1, ''),
-(4, 'Chocolate', 1400, 31, 2, '...'),
-(5, 'Red Velvet', 2500, 42, 2, ''),
-(6, 'Caramelo', 1200, 3, 2, ''),
-(7, 'Manzanita de hojaldre', 600, 18, 3, '...'),
-(8, 'Palmerita', 500, 31, 3, ''),
-(9, 'Caracola', 300, 39, 3, '');
+(1, 'Sofía', 2400, 25, 1, '...', ''),
+(2, 'Lucía', 2500, 1, 1, '...', ''),
+(3, 'Emma', 2200, 13, 1, '', ''),
+(4, 'Chocolate', 1400, 31, 2, '...', ''),
+(5, 'Red Velvet', 2500, 42, 2, '', ''),
+(6, 'Caramelo', 1200, 3, 2, '', ''),
+(7, 'Manzanita de hojaldre', 600, 18, 3, '...', ''),
+(8, 'Palmerita', 500, 31, 3, '', ''),
+(9, 'Caracola', 300, 39, 3, '', '');
 
 -- --------------------------------------------------------
 
