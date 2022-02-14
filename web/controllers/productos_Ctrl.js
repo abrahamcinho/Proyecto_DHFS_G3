@@ -16,7 +16,11 @@ const productos_Ctrl = {
             db.Flavors.findAll()
             .then((flavors) => {
                 db.Sizes.findAll()
-                .then((sizes) => res.render('detalleDelProducto', { product: product, flavors: flavors, sizes: sizes }))
+                .then((sizes) => {
+                    db.Products.findAll()
+                    .then((products) => {
+                        const prods = products.sort(() => Math.random() - 0.5);
+                        res.render('detalleDelProducto', { product: product, flavors: flavors, sizes: sizes, prods: prods })})})
                 .catch((e) => console.log(e));
             })
             .catch((e) => console.log(e));

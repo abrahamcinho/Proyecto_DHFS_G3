@@ -53,8 +53,13 @@
         
         .botones {
             display: flex;
-            width: 90%;
+            width: 100%;
             justify-content: flex-end;
+            align-items: center;
+        }
+
+        .botones button {
+            width: 20%;
         }
         /*Footer*/
         

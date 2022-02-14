@@ -9,7 +9,7 @@ module.exports = (sqlize) => {
     ProductsCategories.associate = function(models) {
         // Las asociaciones con otros objetos deben ser definidos aquí.
         ProductsCategories.hasMany(models.Products, { as: "categoriaProduct",
-        foreignKey: "prod_categ_id" })
+        foreignKey: "prod_categ_id" });
     };
     return ProductsCategories;
 }
