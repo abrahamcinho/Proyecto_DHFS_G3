@@ -12,32 +12,41 @@
         </div>
     </section>
     <section class="detalles-producto">
-        <h1><%= product.name %></h1>
-        <div class="precios">
-                <h3>$<%= product.price %></h3>
-                <h5><%= product.discount %>% OFF</h5>
-        </div>
-        <div class="listado">
-            <%= product.description %>
-        </div>
         <form>
+            <h1><%= product.name %></h1>
+            <div class="precios">
+                    <h3>$<%= product.price %></h3>
+                    <h5><%= product.discount %>% OFF</h5>
+            </div>
+            <div class="listado">
+                <%= product.description %>
+            </div>
             <label>Seleccione el relleno:</label>
             <select class="estilo_cuadro" name="flavors">
                 <option value="Seleccione">Seleccione...</option>
                 <% flavors.forEach(flavor => {%>                    
-                    <option value="<%= flavor.name %>">
+                    <option value="<%= flavor.flavor_id %>">
                         <%= flavor.name %>
                     </option>
                 <% });%>
             </select>
             <label>Seleccione el tamaño:</label>
             <select class="estilo_cuadro" name="size">
-                <option value="Seleccione">Seleccione...</option>
+                <option value="seleccione">Seleccione...</option>
                 <% sizes.forEach(size => {%>                    
                     <option value="<%= size.name %>">
                         <%= size.name %>
                     </option>
                 <% });%>
+            </select>
+            <label>Seleccione la cantidad:</label>
+            <select class="estilo_cuadro" name="quantity">
+                <option value="cantidad">Seleccione...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select>
             <button onClick="setFromInfo(this.form)" class="boton_carrito" name="boton" type="button">AÑADIR AL CARRITO</button>
         </form>

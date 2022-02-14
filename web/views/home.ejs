@@ -10,17 +10,13 @@
             </ul>
         </div>
         <div class="aside-destacado">
-            <img src="/public/images/torta-lucia.jpg">
+            <img src="<%= prod[0].image %>" alt="<%= prod[0].name %>">
             <div class="mask">
-                <h2 class="product-title">Torta Lucia</h2>
+                <h2 class="product-title"><%= prod[0].name %></h2>
                 <span class="description">
-                    Bizcocho de vainilla.
-                    Puede seleccionar entre distintos rellenos.
-                    Cubierta de pasta ballina color rosa pastel.
-                    Decorada con macarons y figuras comestibles de azucar glass.
-                    Puede selecionar distintos tamaños.
+                    <%= prod[0].description %>
                 </span>
-                <span class="price">2500,00 $</span>
+                <span class="price"><%= prod[0].price %> $</span>
             </div>
         </div>
     </aside>
@@ -38,7 +34,6 @@
                 <div class="mySlides">
                     <img src="/public/images/postre-1-a.jpg">
                 </div>
-
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
@@ -50,27 +45,15 @@
             </div>
         </div>
         <div class="main-products">
-            <article class="product">
-                <div class="mask">
-                    <h2 class="product-title">Torta Sofia</h2>
-                    <a href="#"><img src="/public/images/torta-sofia.jpg"></a>
-                    <span class="price">2400,00 $</span>
-                </div>
-            </article>
-            <article class="product">
-                <div class="mask">
-                    <h2 class="product-title">Torta Lucia</h2>
-                    <a href="#"><img src="/public/images/torta-lucia.jpg"></a>
-                    <span class="price">2500,00 $</span>
-                </div>
-            </article>
-            <article class="product">
-                <div class="mask">
-                    <h2 class="product-title">Torta Emma </h2>
-                    <a href="#"><img src="/public/images/torta-emma.jpg"></a>
-                    <span class="price">2200,00 $</span>
-                </div>
-            </article>
+            <% for (let i = 0; i <= 2; i++) { %>
+                <article class="product">
+                    <div class="mask">
+                        <h2 class="product-title"><%= prods[i].name %></h2>
+                        <a href="#"><img src="<%= prods[i].image %>"></a>
+                        <span class="price"><%= prods[i].price %> $</span>
+                    </div>
+                </article>
+            <% };%>
         </div>
     </div>
 </div>
