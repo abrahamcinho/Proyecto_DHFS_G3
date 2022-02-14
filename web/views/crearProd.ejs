@@ -13,14 +13,15 @@
             <textarea type="text" name="description"
                 placeholder="Ej: Esponjosa, dulce y con un sutil sabor a ron. Dulce de leche y trocitos de chocolate amargo."></textarea>
             <label>Categoria</label>
-            <select>
+            <select name="prod_categ_id">
                 <option>Seleccione...</option>
-                <% categories.forEach(categorie => {%>
-                    <option name="prod_categ_id" value="<%= categorie.prod_categ_id %>"><%= categorie.name %></option>
-                <% });%>
+                <% for (let i = 0; i < categories.length; i++) { %>
+                    <option value="<%= categories[i].prod_categ_id %>"><%= categories[i].name %></option>
+                <% };%>
             </select>
-            <form method="POST" action="action.cgi" enctype="multipart/form-data"><input type="file" name="image"></form>
-            <form method="POST" action="/productos/create"><button type="submit">Crear</button></form>
+            <label for="image">Imagen</label>
+            <input type="text" name="image" placeholder="Ej ruta imagen">
+            <button type="submit">Crear</button>
         </form>
     </div>
 </div>

@@ -1,6 +1,11 @@
-const express = require("express");
-const router = express.Router();
+const db = require('../config/dataBase_config');
 
-router.get("/", (req, res) => { res.render("carritoDeCompras", { user: req.session.userLogged }); });
+const carrito_Ctrl = {
+    listAll: (req, res) => {	
+        db.Chart.findAll()
+        .then((carrito) => res.render('carritoDeCompras', { carrito: carrito }))
+        .catch((e) => console.log(e));
+    }
+}
 
-module.exports = router;
+module.exports = carrito_Ctrl;
