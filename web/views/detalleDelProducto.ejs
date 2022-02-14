@@ -53,15 +53,13 @@
     </section>
 </div>
 <div class="prod">
-    <h3>Productos similares</h3>
+    <h3>Productos recomendados</h3>
 </div>
 <div class="productos_similares">
-    <div class="imagenes_prod_similares ">
-        <img src="/public/images/torta-sofia.jpg ">
-    </div>
-
-    <div class="imagenes_prod_similares ">
-        <img src="/public/images/torta-emma.jpg ">
-    </div>
+    <% for (let i = 0; i <= 2; i++) { %>
+        <div class="imagenes_prod_similares ">
+            <a href="/productos/detail/<%=prods[i].prod_id%>"><img src="<%= prods[i].image %>" alt="<%= prods[i].name %>"></a>
+        </div>
+    <% };%>
 </div>
 <%- include("./partials/footer") %>
