@@ -2,13 +2,22 @@
 <div class="register_container">
     <div class="register_subcontainer">
         <h3 class="create_account">¡Crea tu cuenta!</h3>
+<<<<<<< HEAD
 
         <form action="/registro" method="POST">
+=======
+        <!-- <form action="/registro" method="POST" enctype="multipart/form-data">
+>>>>>>> 1da2bfb9570a032d4118ab9261061e1264106f72
             <input id="nombre" type=" text" name="first_name" placeholder="Nombre">
             <div id="errorNombre"></div>
             <input id="apellido" type="text" name="last_name" placeholder="Apellido">
-            <div id="errorApellido"></div>
-            <input type="email" name="email" placeholder="Email">
+            <div id="errorApellido"></div> -->
+        <form id="formRegistro" action="/registro" method="POST" enctype="multipart/form-data">
+            <input id="nombre" type=" text" name="nombre" placeholder="Nombre">
+            <div id="errorNombre" ></div>
+            <input id="apellido" type="text" name="apellido" placeholder="Apellido">
+            <div id="errorApellido" ></div>
+            <input id="email" type="email" name="email" placeholder="Email">
             <div id="errorEmail"></div>
             <input id="password" type="password" name="password" placeholder="Contraseña">
             <div id="errorPass"></div>
