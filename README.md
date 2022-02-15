@@ -27,3 +27,13 @@ Todo publico con acceso a internet y paladares dispuestos a deleitarse con la ga
 3. https://www.hechoenlapasteleria.com.ar/
 4. https://esruiz.com.ar/shop/
 5. http://www.labuenosairespasteleria.com.ar/
+
+
+## Trello:
+
+https://trello.com/b/WbYH0veK/proyecto-grupo3
+
+## DB: 
+
+1. Crear la BD con nombre "sweetdreams" y luego importar el archivo /database/sweetdreamsDatav0.3.sql. 
+2. Editar el archivo de configuracion para acceder al localhost en /web/config/dataBase_config.js.
