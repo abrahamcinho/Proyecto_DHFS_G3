@@ -2,42 +2,49 @@
 <div class="register_container">
     <div class="register_subcontainer">
         <h3 class="create_account">¡Crea tu cuenta!</h3>
-        <form action="http://localhost:3030/registro" method="POST" enctype="multipart/form-data">
-            <input id="nombre" type=" text" name="nombre" placeholder="Nombre">
-            <div id="errorNombre" ></div>
-            <input id="apellido" type="text" name="apellido" placeholder="Apellido">
-            <div id="errorApellido" ></div>
+        <form action="/registro" method="POST" enctype="multipart/form-data">
+            <input id="nombre" type=" text" name="first_name" placeholder="Nombre">
+            <div id="errorNombre"></div>
+            <input id="apellido" type="text" name="last_name" placeholder="Apellido">
+            <div id="errorApellido"></div>
             <input type="email" name="email" placeholder="Email">
-            <div id="errorEmail" ></div>
+            <div id="errorEmail"></div>
             <input id="password" type="password" name="password" placeholder="Contraseña">
-            <div id="errorPass" ></div>
+            <div id="errorPass"></div>
+            <select name="users_categ_id">
+                <option>Seleccione...</option>
+                <% for (let i = 0; i < categories.length; i++) { %>
+                    <option value="<%= categories[i].users_categ_id %>"><%= categories[i].name %></option>
+                <% };%>
+            </select>
             <!-- <input id="avatar" type="file" name="avatar" onchange="validateImage()" accept="image/png,image/jpeg,image/bmp,image/gif"> -->
             <input id="avatar" type="file" name="avatar" onchange="validateImage()">
-            <div id="errorAvatar" ></div>
+            <div id="errorAvatar"></div>
             <button type="submit"><span>Registrarse</span></button>
-            <p class="conditions">Al hacer click en <strong>Registrarse</strong>, aceptas nuestros
-                <a title="Política de Privacidad y Utilización de Cookies" href="http://www.nosequeestudiar.net/politica-de-privacidad-y-utilizacion-de-cookies/
-    " target="_blank">Terminos y Condiciones</a> incluida nuestra politica de utilización de Cookies.
-            </p>
         </form>
+        <p class="conditions">Al hacer click en <strong>Registrarse</strong>, aceptas nuestros
+            <a title="Política de Privacidad y Utilización de Cookies" href="http://www.nosequeestudiar.net/politica-de-privacidad-y-utilizacion-de-cookies/
+" target="_blank">Terminos y Condiciones</a> incluida nuestra politica de utilización de Cookies.
+        </p>
         <h5 class="have_account">¿Ya tienes cuenta? <a href="/login">Ingresar a Sweet Dreams</a></h5>
     </div>
 </div>
 <%- include("./partials/footer") %>
+
 <script type="text/javascript" src="../public/js/register.js"></script>
 <script>
     function validateImage() {
         var formData = new FormData();
         var file = avatar.files[0];
         formData.append("Filedata", file);
-        
+
         var imgFormat = file.type.split('/').pop().toLowerCase();
         if (imgFormat != "jpeg" && imgFormat != "jpg" && imgFormat != "png" && imgFormat != "gif") {
-            document.querySelector("#errorAvatar").innerHTML=('El avatar debe ser formato JPG, PNG, GIF o PDF.');
+            document.querySelector("#errorAvatar").innerHTML = ('El avatar debe ser formato JPG, PNG, GIF o PDF.');
             document.querySelector("#avatar").value = '';
             return false;
-        }else{
-            document.querySelector("#errorAvatar").innerHTML=('');
+        } else {
+            document.querySelector("#errorAvatar").innerHTML = ('');
         }
         return true;
     }

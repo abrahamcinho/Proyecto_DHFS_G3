@@ -21,7 +21,8 @@
 }
 
 .register_subcontainer input,
-.register_subcontainer button {
+.register_subcontainer button,
+.register_subcontainer select {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 18px;
 	width: 70%;
