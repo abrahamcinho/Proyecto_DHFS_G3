@@ -1,28 +1,28 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const path = require("path");
-const session = require("express-session");
-var cookieParser = require("cookie-parser");
-const auth = require("./middlewares/authUser");
+const path = require('path');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const auth = require('./middlewares/authUser');
 
 //configuracion db
-const db = require("./config/dataBase_config");
+const db = require('./config/dataBase_config');
 
 //configuracion db
 db.sqlize.sync()
-    .then(() => console.log("database connect true..."))
+    .then(() => console.log('database connect true...'))
     .catch((e) => console.log(e));
 
 app.use(cookieParser());
-app.use("/public", express.static("public"));
+app.use('/public', express.static('public'));
 
 //settings
-app.set("views", path.resolve(__dirname, "views"));
-app.set("view engine", "ejs");
+app.set('views', path.resolve(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-//app.use(methodOverride("_method"));
+//app.use(methodOverride('_method'));
 app.use(session({
-    secret: "Session - Top Secret",
+    secret: 'Session - Top Secret',
     resave: true,
     saveUninitialized: true
 }));
@@ -33,10 +33,10 @@ app.use(express.urlencoded({
 
 app.use(express.json());
 
-const loginCTRL = require("./controllers/login_Ctrl");
+const loginCTRL = require('./controllers/login_Ctrl');
 
 app.use(auth);
-app.use("/login", loginCTRL);
+app.use('/login', loginCTRL);
 app.use('/login', require('./routers/login'));
 
 //Router
@@ -48,4 +48,4 @@ app.use('/categorie', require('./routers/bycategories'));
 app.use('/carrito', require('./routers/shoppingcart'));
 
 //Listen port
-app.listen(3030, (req, res) => console.log("app para Sweet Dreams online..."));
+app.listen(3030, (req, res) => console.log('app para Sweet Dreams online...'));

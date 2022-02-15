@@ -193,7 +193,7 @@ CREATE TABLE `sweetdreams`.`users` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
-  `email` varchar(30) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
   `avatar` varchar(255) NOT NULL,
   `users_categ_id` int(10) UNSIGNED NOT NULL

@@ -2,16 +2,11 @@
 <div class="register_container">
     <div class="register_subcontainer">
         <h3 class="create_account">¡Crea tu cuenta!</h3>
-        <!-- <form action="/registro" method="POST" enctype="multipart/form-data">
+        <form action="/registro" method="POST">
             <input id="nombre" type=" text" name="first_name" placeholder="Nombre">
             <div id="errorNombre"></div>
             <input id="apellido" type="text" name="last_name" placeholder="Apellido">
-            <div id="errorApellido"></div> -->
-        <form id="formRegistro" action="/registro" method="POST" enctype="multipart/form-data">
-            <input id="nombre" type=" text" name="nombre" placeholder="Nombre">
-            <div id="errorNombre" ></div>
-            <input id="apellido" type="text" name="apellido" placeholder="Apellido">
-            <div id="errorApellido" ></div>
+            <div id="errorApellido"></div>
             <input id="email" type="email" name="email" placeholder="Email">
             <div id="errorEmail"></div>
             <input id="password" type="password" name="password" placeholder="Contraseña">
@@ -27,6 +22,7 @@
             <div id="errorAvatar"></div>
             <button type="submit"><span>Registrarse</span></button>
         </form>
+
         <p class="conditions">Al hacer click en <strong>Registrarse</strong>, aceptas nuestros
             <a title="Política de Privacidad y Utilización de Cookies" href="http://www.nosequeestudiar.net/politica-de-privacidad-y-utilizacion-de-cookies/
 " target="_blank">Terminos y Condiciones</a> incluida nuestra politica de utilización de Cookies.
@@ -36,7 +32,7 @@
 </div>
 <%- include("./partials/footer") %>
 
-<script type="text/javascript" src="../public/js/register.js"></script>
+<!-- <script type="text/javascript" src="../public/js/register.js"></script>
 <script>
     function validateImage() {
         var formData = new FormData();
@@ -53,4 +49,4 @@
         }
         return true;
     }
-</script>
+</script> -->

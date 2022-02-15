@@ -10,12 +10,12 @@ const register_Ctrl = {
     },
     createUser: (req, res) => {
         db.Users.create({
-            first_name: req.body.nombre,
-            last_name: req.body.apellido,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
             email: req.body.email,
             password: req.body.password,
             avatar: req.body.avatar,
-            users_categ_id: req.body.categoria
+            users_categ_id: req.body.users_categ_id
         })
         .then(() => res.redirect('login'), { msj: "Registro exitoso" })
         .catch((e) => console.log(e));
