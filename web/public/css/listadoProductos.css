@@ -39,7 +39,7 @@
     width: 11rem;
 }
 
-.product_box button {
+.product_box button, .btn-listadoProd {
     font-family: 'Quicksand', sans-serif;
     font-size: .8rem;
     padding: .2rem;
@@ -48,12 +48,14 @@
     color: #fffafa;
 }
 
-.product_box button a {
+.product_box button a, .btn-listadoProd a {
     text-decoration: none;
     color: #fffafa;
     padding: .5rem 1rem;
 }
-
+.btn-listadoProd a:hover{
+    color: #fffafa;
+}
 .button_margin {
     margin-top: 10px;
     height: 2.5rem;

@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
         return re.test(email);
     }
 
-    //Validando los campos del formulario de Login anter de ser enviados
+    //Validando los campos del formulario de Login antes de ser enviados
 
 
     //validamos el Email

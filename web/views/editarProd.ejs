@@ -1,28 +1,64 @@
 <%- include("./partials/header") %>
-<form class="form_edit" method="POST" action="/productos/edit/<%= product.prod_id %>">
-    <label for="Nombre">Nombre:</label>
-    <input type="text" name="name" value="<%= product.name %>">
-    <label for="Precio">Precio:</label>
-    <input type="number" value="<%= product.price %>" name="price">
-    <label for="Descuento">Descuento:</label>
-    <input type="number" value="<%= product.discount %>" name="discount">
-    <label for="Descripcion">Descripción:</label>
-    <input type="text" value="<%= product.description %>" name="description" >
-    <img src="<%= product.image %>" alt="<%=product.name%>">
-    <label for="Categoria">Categoría:</label>  
-    <select name="categorie">
-        <% categories.forEach(categorie => {%>
-            <% if (categorie.prod_categ_id === product.prod_categ_id) {%>
-                <option value="<%= categorie.name %>" selected><%= categorie.name %></option>
-            <% } else {%>
-                <option value="<%= categorie.name %>"><%= categorie.name %></option>
-            <% }%>
-        <% });%>
-    </select>
-    <button type="submit" value="Aceptar">Aceptar</button>
-    <button type="cancel" value="Cancelar">Cancelar</button>
-</form>
-<form method="POST" action="/productos/delete/<%= product.prod_id %>">
-    <button type="submit">Eliminar</button>
-</form>
+<div class="container-crear-prod">
+    <div class="subcontainer-crear-prod">
+        <h3>Editar/Eliminar Producto</h3>
+        <form id="formProd" method="POST" action="/productos/edit/<%= product.prod_id %>">
+            <label for="Nombre">Nombre:</label>
+            <input id="nombreProd" type="text" name="name" value="<%= product.name %>">
+            <div id="errorNombreProd" ></div>
+            <label for="Precio">Precio:</label>
+            <input type="number" value="<%= product.price %>" name="price">
+            <label for="Descuento">Descuento:</label>
+            <input type="number" value="<%= product.discount %>" name="discount">
+            <label for="Descripcion">Descripción:</label>
+            <input id="descripcion" type="text" value="<%= product.description %>" name="description" >
+            <div id="errorDescripcion" ></div>
+            <img src="<%= product.image %>" alt="<%=product.name%>">
+            <label for="Categoria">Categoría:</label>  
+            <select name="categorie">
+                <% categories.forEach(categorie => {%>
+                    <% if (categorie.prod_categ_id === product.prod_categ_id) {%>
+                        <option value="<%= categorie.name %>" selected><%= categorie.name %></option>
+                    <% } else {%>
+                        <option value="<%= categorie.name %>"><%= categorie.name %></option>
+                    <% }%>
+                <% });%>
+            </select>
+            <button type="submit" value="Aceptar">Aceptar</button>
+            <button type="cancel" value="Cancelar">Cancelar</button>
+        </form>
+        <form method="POST" action="/productos/delete/<%= product.prod_id %>">
+            <button type="submit">Eliminar</button>
+        </form>
+    </div>
+</div>
 <%- include("./partials/footer") %>
+<script type="text/javascript">
+    window.addEventListener("load", function () {
+        let formProd = document.querySelector("#formProd");
+        let nombreProd = document.querySelector("#nombreProd");
+        let errorNombreProd = document.querySelector("#errorNombreProd");
+        let descripcion = document.querySelector("#descripcion");
+        let errorDescripcion = document.querySelector("#errorDescripcion");
+
+        //Validando los campos del formulario de Creacion de producto
+        console.log(formProd);
+        formProd.addEventListener("submit", function (evento) {
+            evento.preventDefault();
+            //validamos el Nombre
+            if (nombreProd.value.length < 5) {
+                errorNombreProd.innerHTML = "*El Nombre debe tener al menos 5 caracteres"
+            } else {
+                errorNombreProd.innerHTML = ""
+            }
+
+            //validamos la Descripción
+            if (descripcion.value.length < 20) {
+                errorDescripcion.innerHTML = "*La Descripción debe tener al menos 20 caracteres"
+            } else {
+                errorDescripcion.innerHTML = ""
+            }
+
+        })
+    })
+</script>

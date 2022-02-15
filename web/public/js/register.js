@@ -14,7 +14,7 @@ window.addEventListener("load", function () {
         var re = /\S+@\S+\.\S+/;
         return re.test(email);
     }
-    //Validando los campos del formulario de Registro anter de ser enviados
+    //Validando los campos del formulario de Registro antes de ser enviados
     console.log(formRegistro);
     formRegistro.addEventListener("submit", function (evento) {
         evento.preventDefault();

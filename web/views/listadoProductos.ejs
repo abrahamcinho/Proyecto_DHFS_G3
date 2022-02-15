@@ -1,29 +1,32 @@
 <%- include("./partials/header") %>
-<h2>Presione para agregar producto</h2>
-<a href="/productos/create/">Crear producto</a>
-<h2 class="prod_tittle">Listado de Productos</h2>
-<div class="products_container">
-    <div class="products_subcontainer">
-        <% for (let i = 0; i < categories.length; i++) { %>
-            <% if (!bycateg.some((el) => el.prod_categ_id === categories[i].prod_categ_id)) continue; %>
-            <div class="tittle_container" key="<%= categories[i].prod_categ_id %>">
-                <h4><%= categories[i].name %></h4>
-            </div>
-            <div class="product_bigbox">
-                <% bycateg.forEach(product => {%>
-                    <% if (product.prod_categ_id === categories[i].prod_categ_id) {%>
-                        <div class="product_box">
-                            <img src="<%= product.image %>">
-                            <h5><%= product.name %></h5>
-                            <p>Precio: $<%= product.price %></p>
-                            <a href="/productos/detail/<%=product.prod_id%>">Ver detalle del producto</a>
-                            <a href="/productos/edit/<%=product.prod_id%>">Editar/Eliminar producto</a>
-                            <button class="button_margin" name="boton" type="button"><a href="/productos/detail/<%=product.prod_id%>">AÑADIR AL CARRITO</a></button>
-                        </div>
-                    <% };%>
-                <% });%>
-            </div>
-        <% } %>
+<div class="container">
+    <!-- <h2>Presione para agregar producto</h2> -->
+    <button class="btn-listadoProd button_margin"><a href="/productos/create/">Crear producto</a></button>
+    <h2 class="prod_tittle">Listado de Productos</h2>
+    <div class="products_container">
+        <div class="products_subcontainer">
+            <% for (let i = 0; i < categories.length; i++) { %>
+                <% if (!bycateg.some((el) => el.prod_categ_id === categories[i].prod_categ_id)) continue; %>
+                <div class="tittle_container" key="<%= categories[i].prod_categ_id %>">
+                    <h4><%= categories[i].name %></h4>
+                </div>
+                <div class="product_bigbox">
+                    <% bycateg.forEach(product => {%>
+                        <% if (product.prod_categ_id === categories[i].prod_categ_id) {%>
+                            <div class="product_box">
+                                <img src="<%= product.image %>">
+                                <h5><%= product.name %></h5>
+                                <p>Precio: $<%= product.price %></p>
+                                <button class="button_margin"><a href="/productos/detail/<%=product.prod_id%>">Ver detalle del producto</a></button>
+                                <button class="button_margin"><a href="/productos/edit/<%=product.prod_id%>">Editar/Eliminar producto</a></button>
+                                <button class="button_margin" name="boton" type="button"><a href="/productos/detail/<%=product.prod_id%>">AÑADIR AL CARRITO</a></button>
+                            </div>
+                        <% };%>
+                    <% });%>
+                </div>
+            <% } %>
+        </div>
     </div>
 </div>
+
 <%- include("./partials/footer") %>

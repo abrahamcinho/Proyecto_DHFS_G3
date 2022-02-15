@@ -2,16 +2,19 @@
 <div class="container-crear-prod">
     <div class="subcontainer-crear-prod">
         <h3>Creación de producto</h3>
-        <form method="POST" action="/productos/create">
+        <form id="formProd" method="POST" action="/productos/create">
             <label>Nombre</label>
-            <input type="text" name="name" placeholder="Ej: Chocotorta">
+            <input id="nombreProd" type="text" name="name" placeholder="Ej: Chocotorta">
+            <div id="errorNombreProd" ></div>
             <label>Precio (ARS-$)</label>
             <input type="text" name="price" placeholder="Ej: 200">
             <label>Descuento (%)</label>
             <input type="text" name="discount" placeholder="Ej: 15">
             <label>Descripcion</label>
-            <textarea type="text" name="description"
-                placeholder="Ej: Esponjosa, dulce y con un sutil sabor a ron. Dulce de leche y trocitos de chocolate amargo."></textarea>
+            <textarea id="descripcion" type="text" name="description"
+                placeholder="Ej: Esponjosa, dulce y con un sutil sabor a ron. Dulce de leche y trocitos de chocolate amargo.">
+            </textarea>
+            <div id="errorDescripcion" ></div>
             <label>Categoria</label>
             <select>
                 <option>Seleccione...</option>
@@ -19,9 +22,62 @@
                     <option name="prod_categ_id" value="<%= categorie.prod_categ_id %>"><%= categorie.name %></option>
                 <% });%>
             </select>
-            <form method="POST" action="action.cgi" enctype="multipart/form-data"><input type="file" name="image"></form>
-            <form method="POST" action="/productos/create"><button type="submit">Crear</button></form>
+            <label>Imagen</label>
+            <!-- <form method="POST" action="action.cgi" enctype="multipart/form-data">
+                <input id="image" type="file" name="image">
+                <div id="errorImage" ></div>
+            </form> -->
+            <input id="image" type="file" name="avatar" onchange="validateImage()">
+            <div id="errorImage" ></div>
+            <!-- <form method="POST" action="/productos/create"><button type="submit">Crear</button></form> -->
+            <button type="submit">Crear</button>
         </form>
     </div>
 </div>
 <%- include("./partials/footer") %>
+<!-- <script type="text/javascript" src="../public/js/productos.js"></script> -->
+
+<script type="text/javascript">
+    window.addEventListener("load", function () {
+        let formProd = document.querySelector("#formProd");
+        let nombreProd = document.querySelector("#nombreProd");
+        let errorNombreProd = document.querySelector("#errorNombreProd");
+        let descripcion = document.querySelector("#descripcion");
+        let errorDescripcion = document.querySelector("#errorDescripcion");
+
+        //Validando los campos del formulario de Creacion de producto
+        console.log(formProd);
+        formProd.addEventListener("submit", function (evento) {
+            evento.preventDefault();
+            //validamos el Nombre
+            if (nombreProd.value.length < 5) {
+                errorNombreProd.innerHTML = "*El Nombre debe tener al menos 5 caracteres"
+            } else {
+                errorNombreProd.innerHTML = ""
+            }
+
+            //validamos la Descripción
+            if (descripcion.value.length < 20) {
+                errorDescripcion.innerHTML = "*La Descripción debe tener al menos 20 caracteres"
+            } else {
+                errorDescripcion.innerHTML = ""
+            }
+
+        })
+    })
+    function validateImage() {
+        var formData = new FormData();
+        var file = image.files[0];
+        formData.append("Filedata", file);
+        
+        var imgFormat = file.type.split('/').pop().toLowerCase();
+        if (imgFormat != "jpeg" && imgFormat != "jpg" && imgFormat != "png" && imgFormat != "gif") {
+            document.querySelector("#errorImage").innerHTML=('La imagen debe ser formato JPG, PNG, GIF o PDF.');
+            document.querySelector("#image").value = '';
+            return false;
+        }else{
+            document.querySelector("#errorImage").innerHTML=('');
+        }
+        return true;
+    }
+</script>
