@@ -16,20 +16,14 @@
             </textarea>
             <div id="errorDescripcion" ></div>
             <label>Categoria</label>
-            <select>
+            <select name="prod_categ_id">
                 <option>Seleccione...</option>
-                <% categories.forEach(categorie => {%>
-                    <option name="prod_categ_id" value="<%= categorie.prod_categ_id %>"><%= categorie.name %></option>
-                <% });%>
+                <% for (let i = 0; i < categories.length; i++) { %>
+                    <option value="<%= categories[i].prod_categ_id %>"><%= categories[i].name %></option>
+                <% };%>
             </select>
-            <label>Imagen</label>
-            <!-- <form method="POST" action="action.cgi" enctype="multipart/form-data">
-                <input id="image" type="file" name="image">
-                <div id="errorImage" ></div>
-            </form> -->
-            <input id="image" type="file" name="avatar" onchange="validateImage()">
-            <div id="errorImage" ></div>
-            <!-- <form method="POST" action="/productos/create"><button type="submit">Crear</button></form> -->
+            <label for="image">Imagen</label>
+            <input type="text" name="image" placeholder="Ej ruta imagen">
             <button type="submit">Crear</button>
         </form>
     </div>

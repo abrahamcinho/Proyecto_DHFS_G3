@@ -2,13 +2,7 @@ const { Sequelize } = require("sequelize");
 
 let db = {};
 
-// const sqlize = new Sequelize('sweetdreams', 'root', 'Cr8st8n1', {
-//     host: "localhost",
-//     dialect: "mysql",
-//     define: { timestamps: false },
-//     logging: false
-// });
-const sqlize = new Sequelize('sweetdreams', 'root', '', {
+const sqlize = new Sequelize('sweetdreams', 'root', 'Cr8st8n1', {
     host: "localhost",
     dialect: "mysql",
     define: { timestamps: false },
@@ -26,5 +20,6 @@ db.FlavorsProd = require("../models/flavors_products_models")(sqlize, Sequelize)
 db.Sizes = require("../models/sizes_models")(sqlize, Sequelize);
 db.SizeProd = require("../models/sizes_products_models")(sqlize, Sequelize);
 db.UsersCateg = require("../models/users_categories_models")(sqlize, Sequelize);
+db.Chart = require("../models/chart_models")(sqlize, Sequelize);
 
 module.exports = db;

@@ -1,0 +1,28 @@
+<%- include("./partials/header") %>
+<div class="container-crear-prod">
+    <div class="subcontainer-crear-prod">
+        <h3>Creación de producto</h3>
+        <form method="POST" action="/usuarios/create">
+            <label>Nombre</label>
+            <input type="text" name="first_name">
+            <label>Apellido</label>
+            <input type="text" name="last_name">
+            <label>Email</label>
+            <input type="email" name="email">
+            <label>Avatar</label>
+            <input type="text" name="avatar">
+            <label>Categoria</label>
+            <select name="users_categ_id">
+                <option>Seleccione...</option>
+                <% for (let i = 0; i < categories.length; i++) { %>
+                    <option value="<%= categories[i].users_categ_id %>"><%= categories[i].name %></option>
+                <% };%>
+            </select>
+	    <label>Password</label>
+	    <input type="password" name="password">
+            <button type="submit">Crear</button>
+	    <button type="cancel" value="Cancelar">Cancelar</button>
+        </form>
+    </div>
+</div>
+<%- include("./partials/footer") %>
