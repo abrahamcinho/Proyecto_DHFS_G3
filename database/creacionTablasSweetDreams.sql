@@ -1,4 +1,4 @@
-CREATE TABLE `sweetdreams`.`users` ( `user_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(100) NOT NULL , `last_name` VARCHAR(100) NOT NULL , `email` VARCHAR(30) NOT NULL , `password` VARCHAR(50) NOT NULL , `avatar` VARCHAR(255) NOT NULL , `user_categ_id` INT(10) UNSIGNED NOT NULL , PRIMARY KEY (`user_id`)) ENGINE = InnoDB; 
+CREATE TABLE `sweetdreams`.`users` ( `user_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(100) NOT NULL , `last_name` VARCHAR(100) NOT NULL , `email` VARCHAR(100) NOT NULL , `password` VARCHAR(50) NOT NULL , `avatar` VARCHAR(255) NOT NULL , `user_categ_id` INT(10) UNSIGNED NOT NULL , PRIMARY KEY (`user_id`)) ENGINE = InnoDB; 
 
 CREATE TABLE `sweetdreams`.`users_categories` ( `user_categ_id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(100) NOT NULL , PRIMARY KEY (`user_categ_id`)) ENGINE = InnoDB; 
 
