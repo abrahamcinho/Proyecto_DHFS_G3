@@ -10,6 +10,7 @@ const register_Ctrl = {
     },
     createUser: (req, res) => {
         db.Users.create({
+            
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             email: req.body.email,
