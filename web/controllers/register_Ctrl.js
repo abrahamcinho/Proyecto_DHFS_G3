@@ -12,7 +12,7 @@ const register_Ctrl = {
             last_name: req.body.last_name,
             email: req.body.email,
             password: req.body.password,
-            avatar: req.body.avatar,
+            avatar: req.file.filename,
             users_categ_id: req.body.users_categ_id
         })
         .then(() => res.redirect('login'), { msj: "Registro exitoso" })
