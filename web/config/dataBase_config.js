@@ -2,18 +2,18 @@ const { Sequelize } = require("sequelize");
 
 let db = {};
 
-const sqlize = new Sequelize('sweetdreams', 'root', 'Cr8st8n1', {
-    host: "localhost",
-    dialect: "mysql",
-    define: { timestamps: false },
-    logging: false
-});
-// const sqlize = new Sequelize('sweetdreams', 'root', '', {
+// const sqlize = new Sequelize('sweetdreams', 'root', 'Cr8st8n1', {
 //     host: "localhost",
 //     dialect: "mysql",
 //     define: { timestamps: false },
 //     logging: false
 // });
+const sqlize = new Sequelize('sweetdreams', 'root', '', {
+    host: "localhost",
+    dialect: "mysql",
+    define: { timestamps: false },
+    logging: false
+});
 
 db.Sequelize = Sequelize;
 db.sqlize = sqlize;

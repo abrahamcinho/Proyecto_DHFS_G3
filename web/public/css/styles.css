@@ -272,7 +272,7 @@ li {
     position: relative;
     z-index: 99;
     background: rgba(111, 29, 87, 0.7);
-    height: calc(100% + 200px);
+    height: calc(100% + 50vh);
     color: #fcbd8b;
 }
 
@@ -434,7 +434,7 @@ footer h4 {
 /*Desk 1400*/
 @media(max-width:1499px) {
     .main-container .left-col .aside-destacado .mask {
-        height: calc(100% + 50px);
+        height: calc(100% + 18vh);
     }
 
     .main-container .left-col .aside-destacado .mask h2,
@@ -540,7 +540,7 @@ footer h4 {
     }
 
     .main-container .left-col .aside-destacado .mask {
-        height: calc(100% + 200px);
+        height: calc(100% + 22vh);
     }
 
     .main-container .left-col .aside-destacado .mask h2,
