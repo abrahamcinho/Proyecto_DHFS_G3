@@ -2,7 +2,7 @@
 <div class="container-crear-prod">
     <div class="subcontainer-crear-prod">
         <h3>Creación de producto</h3>
-        <form id="formProd" method="POST" action="/productos/create">
+        <form id="formProd" method="POST" action="/productos/create" enctype="multipart/form-data">
             <label>Nombre</label>
             <input id="nombreProd" type="text" name="name" placeholder="Ej: Chocotorta">
             <div id="errorNombreProd" ></div>
@@ -11,8 +11,7 @@
             <label>Descuento (%)</label>
             <input type="text" name="discount" placeholder="Ej: 15">
             <label>Descripcion</label>
-            <textarea id="descripcion" type="text" name="description"
-                placeholder="Ej: Esponjosa, dulce y con un sutil sabor a ron. Dulce de leche y trocitos de chocolate amargo.">
+            <textarea id="descripcion" type="text" name="description" placeholder="Ej: Esponjosa, dulce y con un sutil sabor a ron. Dulce de leche y trocitos de chocolate amargo.">
             </textarea>
             <div id="errorDescripcion" ></div>
             <label>Categoria</label>

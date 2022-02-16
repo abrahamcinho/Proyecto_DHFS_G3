@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
         } else {
             errorPass.innerHTML = ""
         }
-
+        formLogin.submit();
     })
    
 
