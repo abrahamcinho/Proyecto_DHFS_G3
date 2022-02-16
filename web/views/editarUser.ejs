@@ -8,7 +8,7 @@
     <label for="Email">Email:</label>
     <input type="email" value="<%= user.email %>" name="email">
     <label for="Avatar">Avatar:</label>
-    <input type="text" value="<%= user.avatar %>" name="avatar" >
+    <input id="avatar" type="file" name="avatar">
     <label for="Categoria">Categoría:</label>  
     <select name="users_categ_id">
         <% categories.forEach(categorie => {%>

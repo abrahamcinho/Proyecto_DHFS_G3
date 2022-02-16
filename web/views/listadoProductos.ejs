@@ -14,7 +14,7 @@
                     <% bycateg.forEach(product => {%>
                         <% if (product.prod_categ_id === categories[i].prod_categ_id) {%>
                             <div class="product_box">
-                                <img src="./public/images/products/<%= product.image %>">
+                                <img src="<%= product.image %>">
                                 <h5><%= product.name %></h5>
                                 <p>Precio: $<%= product.price %></p>
                                 <button class="button_margin"><a href="/productos/detail/<%=product.prod_id%>">Ver detalle del producto</a></button>

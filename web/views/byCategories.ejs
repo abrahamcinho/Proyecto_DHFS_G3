@@ -5,7 +5,7 @@
             <div class="product_bigbox">
                 <% products.forEach(product => {%>
                         <div class="product_box">
-                            <img src="/public/images/products/<%= product.image %>">
+                            <img src="<%= product.image %>">
                             <h5><%= product.name %></h5>
                             <p>Precio: $<%= product.price %></p>
                             <a href="/productos/detail/<%=product.prod_id%>">Ver detalle del producto</a>

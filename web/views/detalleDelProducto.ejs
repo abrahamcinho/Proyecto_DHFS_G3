@@ -4,11 +4,11 @@
 <div class="dividirColumnas">
     <section class="imagenes">
         <div class="imagenProducto">
-            <img src="/public/images/products/<%= product.image %>" alt="Producto">
+            <img src="<%= product.image %>" alt="Producto">
         </div>
         <div class="imagenes_botones">
-            <img width="44" height="44" decoding="async" src="/public/images/products/<%= product.image %>" class="ui-pdp-image" alt="<%= product.name %>">
-            <img width="44" height="44" decoding="async" src="/public/images/products/<%= product.image %>" class="ui-pdp-image" alt="<%= product.name %>">
+            <img width="44" height="44" decoding="async" src="<%= product.image %>" class="ui-pdp-image" alt="<%= product.name %>">
+            <img width="44" height="44" decoding="async" src="<%= product.image %>" class="ui-pdp-image" alt="<%= product.name %>">
         </div>
     </section>
     <section class="detalles-producto">
@@ -59,7 +59,7 @@
     <% for (let i = 0; i <= 2; i++) { %>
         <div class="imagenes_prod_similares ">
             <% console.log(prods[i].image) %>
-            <a href="/productos/detail/<%=prods[i].prod_id%>"><img src="/public/images/products/<%= prods[i].image %>" alt="<%= prods[i].name %>"></a>
+            <a href="/productos/detail/<%=prods[i].prod_id%>"><img src="<%= prods[i].image %>" alt="<%= prods[i].name %>"></a>
         </div>
     <% };%>
 </div>

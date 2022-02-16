@@ -7,7 +7,7 @@ var path = require("path");
 //configuracion de multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "./public/images/products");
+        cb(null, "./public/images/");
     },
     filename: (req, file, cb) => { 
         let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
@@ -25,7 +25,7 @@ router.get('/detail/:id', productos_Ctrl.listByProd);
 
 //Update
 router.get('/edit/:id', productos_Ctrl.modifyProd);
-router.post('/edit/:id', productos_Ctrl.updateProd);
+router.post('/edit/:id', uploadFile.single('image'), productos_Ctrl.updateProd);
 
 //Create
 router.get('/create', productos_Ctrl.createForm);

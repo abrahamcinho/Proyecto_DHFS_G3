@@ -42,7 +42,7 @@ const productos_Ctrl = {
             price: req.body.price,
             discount: req.body.discount,
             prod_categ_id: req.body.prod_categ_id,
-            image: req.body.image,
+            image: '/public/images/' + req.file.filename,
             description: req.body.description
         },
         { where: { prod_id: req.params.id } })
@@ -60,7 +60,7 @@ const productos_Ctrl = {
             price: req.body.price,
             discount: req.body.discount,
             prod_categ_id: req.body.prod_categ_id,
-            image: req.file.filename,
+            image: '/public/images/' + req.file.filename,
             description: req.body.description
         })
         .catch((e) => console.log(e));
