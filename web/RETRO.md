@@ -49,7 +49,6 @@ Hacer git clone cada vez que quedamos descargar los cambios subidos al GitHub
 Subir Node_modules al GitHub
 
 
-
 ## Retro: Sprint 4
 
 1. Comenzar a hacer
@@ -91,6 +90,55 @@ Procrastinar, esperar afrontar el sprint muy cerca de la fecha de entrega.
 
 5. Dejar de hacer
 Frustrarnos al no saber hacer algo y no conversarlo con el grupo.
+
+## Retro: Sprint 6
+
+
+1. Plan de acciones de mejora.
+
+- Cuando nos sintamos estancados o abrumados, pedir ayuda o compartir la duda para apoyarnos entre todos, así todos aprendemos y nos ayudamos
+- Ir avanzando el proyecto, conjuntamente con las clases, para evitar atrasarnos
+
+
+2. Nuevas best practices
+
+- Se realizaran reuniones periodicas, con el objetivo de debatir el qué y el cómo
+- Se subirá a GitHub solo la info concreta del Proyecto Integrador
+- Se compartiran los archivos y propuestas tentativas, mediante el Discord
+
+
+3. Acuerdos de equipo actualizados.
+
+- Mantenernos comunicados y atentos a las propuestas realizadas
+- Concensuar en todo
+- Investigar sobre E-commers similares al nuestro
+
+4. Impedimentos a escalar
+
+- Problemas al descargar las mejoras subidas al repositorio
+
+
+## Retro: Sprint 7
+
+1. Comenzar a hacer
+Organizar el tablero de trabajo antes de comenzar cada sprint, asi se pueden repartir las actividades mas eficientemente
+
+2. Hacer más
+Reuniones y feedbacks entre el grupo. Tratar de comenzar antes con el sprint para poder corregir errores.
+Buscar hacer copias locales, asi no se pisan y se pierde alguna informacion.
+
+3. Continuar haciendo
+Dedicandonos y poniendo el esfuerzo y ganas que tenemos siempre para afrontar el sprint. Apoyarnos y seguir adelante resolviendo los errores y problemas en el codigo.
+
+4. Hacer menos
+Procrastinar, esperar afrontar el sprint muy cerca de la fecha de entrega.
+
+5. Dejar de hacer
+Frustrarnos al no saber hacer algo y no conversarlo con el grupo.
+
+
+
+
 
 ## ¿Cómo acceder a Carga y edición de productos?
 
