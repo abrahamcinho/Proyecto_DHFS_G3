@@ -46,12 +46,8 @@ window.addEventListener("load", function () {
         } else {
             errorPass.innerHTML = "";
         }
-<<<<<<< HEAD
         formRegistro.submit();
     })
-=======
-    });
->>>>>>> f81c8e51b2f6c1d4e21b379807aec568906e338e
    
 
 
