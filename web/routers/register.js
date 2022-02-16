@@ -18,8 +18,9 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 uploadFile.single('avatar');
+
 //Create
 router.get('/', register_Ctrl.selectCateg);
-router.post('/', uploadFile.single('avatar'),register_Ctrl.createUser);
+router.post('/', uploadFile.single('avatar'), register_Ctrl.createUser);
 
 module.exports = router;

@@ -20,34 +20,38 @@ window.addEventListener("load", function () {
         evento.preventDefault();
         //validamos el Nombre
         if (nombre.value.length < 2) {
-            errorNombre.innerHTML = "*El Nombre debe tener al menos 2 caracteres"
+            errorNombre.innerHTML = "*El Nombre debe tener al menos 2 caracteres";
         } else {
-            errorNombre.innerHTML = ""
+            errorNombre.innerHTML = "";
         }
 
         //validamos el Apellido
         if (apellido.value.length < 2) {
-            errorApellido.innerHTML = "*El Apellido debe tener al menos 2 caracteres"
+            errorApellido.innerHTML = "*El Apellido debe tener al menos 2 caracteres";
         } else {
-            errorApellido.innerHTML = ""
+            errorApellido.innerHTML = "";
         }
         
         //validamos el Email
         if (validateEmail(email.value) == false) {
             //console.log(validateEmail(email.value));
-            errorEmail.innerHTML = "*El Email debe ser valido. Ej: jose@email.com"
+            errorEmail.innerHTML = "*El Email debe ser valido. Ej: jose@email.com";
         } else {
-            errorEmail.innerHTML = ""
+            errorEmail.innerHTML = "";
         }
 
         //validamos el Password
         if (password.value.length < 8) {
-            errorPass.innerHTML = "*La Contraseña debe tener al menos 8 caracteres"
+            errorPass.innerHTML = "*La Contraseña debe tener al menos 8 caracteres";
         } else {
-            errorPass.innerHTML = ""
+            errorPass.innerHTML = "";
         }
+<<<<<<< HEAD
         formRegistro.submit();
     })
+=======
+    });
+>>>>>>> f81c8e51b2f6c1d4e21b379807aec568906e338e
    
 
 
