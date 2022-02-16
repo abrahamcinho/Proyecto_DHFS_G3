@@ -13,36 +13,23 @@ window.addEventListener("load", function () {
     }
 
     //Validando los campos del formulario de Login antes de ser enviados
-
-
     //validamos el Email
-    console.log(formLogin);
     formLogin.addEventListener("submit", function (evento) {
-        evento.preventDefault();
+        // evento.preventDefault();
         //validamos el Email
         if (validateEmail(email.value) == false) {
             //console.log(validateEmail(email.value));
-            errorEmail.innerHTML = "*El Email debe ser valido "
+            errorEmail.innerHTML = "*El Email debe ser valido ";
         } else {
-            errorEmail.innerHTML = ""
+            errorEmail.innerHTML = "";
         }
 
         //validamos el Password
         if (password.value.length < 8) {
-            errorPass.innerHTML = "*Debe ingresar la Contraseña"
+            errorPass.innerHTML = "*Debe ingresar la Contraseña";
         } else {
-            errorPass.innerHTML = ""
+            errorPass.innerHTML = "";
         }
         formLogin.submit();
-    })
-   
-
-
-
-
-
-
-
-
-
-})
+    });
+});

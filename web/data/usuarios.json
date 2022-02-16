@@ -1,1 +1,112 @@
-[{"id":1,"nombre":"Eberto","apellido":"Eggleton","email":"eeggleton0@hhs.gov","password":"hbBaMP","category":"Administrador"},{"id":2,"nombre":"Bailey","apellido":"Jozwiak","email":"bjozwiak1@mayoclinic.com","password":"3fRtT302","category":"Usuario"},{"id":3,"nombre":"Earl","apellido":"Lowey","email":"elowey2@wikia.com","password":"MJqNoKjN7","category":"Administrador"},{"id":4,"nombre":"Guillermo","apellido":"Gibby","email":"ggibby3@bing.com","password":"BKoN5wcT","category":"Administrador"},{"id":5,"nombre":"Ad","apellido":"Begg","email":"abegg4@symantec.com","password":"su8Y8T8Pi98","category":"Usuario"},{"id":6,"nombre":"Storm","apellido":"Chalfont","email":"schalfont5@blinklist.com","password":"kHwYb1K","category":"Usuario"},{"id":7,"nombre":"Dame","apellido":"Henighan","email":"dhenighan6@exblog.jp","password":"pyyDpfN","category":"Usuario"},{"id":8,"nombre":"Judy","apellido":"McGrory","email":"jmcgrory7@people.com.cn","password":"bxiNXqlTGL6","category":"Administrador"},{"id":9,"nombre":"Tiffani","apellido":"Savil","email":"tsavil8@cnn.com","password":"vMciBGdlaZeC","category":"Administrador"},{"id":10,"nombre":"Persis","apellido":"Blaik","email":"pblaik9@ycombinator.com","password":"tWVLJ6dC","category":"Administrador"},{"id":11,"nombre":"Jose","apellido":"Delgado","email":"abrahamcinho@gmail.com","password":"123456"},{"id":12,"nombre":"Abraham","apellido":"Marval","email":"abrahamcinho77@gmail.com","password":"mimosin-1234"},{"id":13,"nombre":"Soledad","apellido":"Nuñez","email":"SN@algo.com","password":"$2a$10$AFpKA4EbsQxpAuDzAUKE0.Sul8/hqQyUb.rSzMnFphMhepxqoFTIC","avatar":"1640114889185_img.png"},{"id":14,"nombre":"pedrito","apellido":"pelaez","email":"abrahamcinho777@gmail.com","password":"$2a$10$cC5v5EedCtBI8NRV/mmigOMMIjusWm5K9KkrQR5olrsDO5t12EtkK","avatar":"1640308014787_img.jpeg"}]
+[
+	{
+		"id": 1,
+		"nombre": "Eberto",
+		"apellido": "Eggleton",
+		"email": "eeggleton0@hhs.gov",
+		"password": "hbBaMP",
+		"category": "Administrador"
+	},
+	{
+		"id": 2,
+		"nombre": "Bailey",
+		"apellido": "Jozwiak",
+		"email": "bjozwiak1@mayoclinic.com",
+		"password": "3fRtT302",
+		"category": "Usuario"
+	},
+	{
+		"id": 3,
+		"nombre": "Earl",
+		"apellido": "Lowey",
+		"email": "elowey2@wikia.com",
+		"password": "MJqNoKjN7",
+		"category": "Administrador"
+	},
+	{
+		"id": 4,
+		"nombre": "Guillermo",
+		"apellido": "Gibby",
+		"email": "ggibby3@bing.com",
+		"password": "BKoN5wcT",
+		"category": "Administrador"
+	},
+	{
+		"id": 5,
+		"nombre": "Ad",
+		"apellido": "Begg",
+		"email": "abegg4@symantec.com",
+		"password": "su8Y8T8Pi98",
+		"category": "Usuario"
+	},
+	{
+		"id": 6,
+		"nombre": "Storm",
+		"apellido": "Chalfont",
+		"email": "schalfont5@blinklist.com",
+		"password": "kHwYb1K",
+		"category": "Usuario"
+	},
+	{
+		"id": 7,
+		"nombre": "Dame",
+		"apellido": "Henighan",
+		"email": "dhenighan6@exblog.jp",
+		"password": "pyyDpfN",
+		"category": "Usuario"
+	},
+	{
+		"id": 8,
+		"nombre": "Judy",
+		"apellido": "McGrory",
+		"email": "jmcgrory7@people.com.cn",
+		"password": "bxiNXqlTGL6",
+		"category": "Administrador"
+	},
+	{
+		"id": 9,
+		"nombre": "Tiffani",
+		"apellido": "Savil",
+		"email": "tsavil8@cnn.com",
+		"password": "vMciBGdlaZeC",
+		"category": "Administrador"
+	},
+	{
+		"id": 10,
+		"nombre": "Persis",
+		"apellido": "Blaik",
+		"email": "pblaik9@ycombinator.com",
+		"password": "tWVLJ6dC",
+		"category": "Administrador"
+	},
+	{
+		"id": 11,
+		"nombre": "Jose",
+		"apellido": "Delgado",
+		"email": "abrahamcinho@gmail.com",
+		"password": "123456"
+	},
+	{
+		"id": 12,
+		"nombre": "Abraham",
+		"apellido": "Marval",
+		"email": "abrahamcinho77@gmail.com",
+		"password": "mimosin-1234"
+	},
+	{
+		"id": 13,
+		"nombre": "Soledad",
+		"apellido": "Nuñez",
+		"email": "SN@algo.com",
+		"password": "$2a$10$AFpKA4EbsQxpAuDzAUKE0.Sul8/hqQyUb.rSzMnFphMhepxqoFTIC",
+		"avatar": "1640114889185_img.png"
+	},
+	{
+		"id": 14,
+		"nombre": "pedrito",
+		"apellido": "pelaez",
+		"email": "abrahamcinho777@gmail.com",
+		"password": "$2a$10$cC5v5EedCtBI8NRV/mmigOMMIjusWm5K9KkrQR5olrsDO5t12EtkK",
+		"avatar": "1640308014787_img.jpeg"
+	}
+]
