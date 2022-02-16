@@ -25,7 +25,7 @@ const users_Ctrl = {
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             email: req.body.email,
-            avatar: req.body.avatar,
+            avatar: '/public/images/avatar/' + req.file.filename,
             users_categ_id: req.body.users_categ_id
         },
         { where: { user_id: req.params.id } })
@@ -48,7 +48,7 @@ const users_Ctrl = {
             last_name: req.body.last_name,
             email: req.body.email,
             password: req.body.password,
-            avatar: req.body.avatar,
+            avatar: '/public/images/avatar/' + req.file.filename,
             users_categ_id: req.body.users_categ_id
         })
         .catch((e) => console.log(e));
