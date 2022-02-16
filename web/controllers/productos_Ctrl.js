@@ -20,7 +20,7 @@ const productos_Ctrl = {
                     db.Products.findAll()
                     .then((products) => {
                         const prods = products.sort(() => Math.random() - 0.5);
-                        res.render('detalleDelProducto', { product: product, flavors: flavors, sizes: sizes, prods: prods })})})
+                        res.render('detalleDelProducto', { product: product, flavors: flavors, sizes: sizes, prods: prods });});})
                 .catch((e) => console.log(e));
             })
             .catch((e) => console.log(e));
@@ -60,7 +60,7 @@ const productos_Ctrl = {
             price: req.body.price,
             discount: req.body.discount,
             prod_categ_id: req.body.prod_categ_id,
-            image: req.body.image,
+            image: req.file.filename,
             description: req.body.description
         })
         .catch((e) => console.log(e));
