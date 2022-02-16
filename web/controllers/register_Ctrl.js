@@ -1,6 +1,4 @@
 const db = require('../config/dataBase_config');
-var path = require("path");
-const multer = require("multer");
 
 const register_Ctrl = {
     selectCateg: (req, res) => {
@@ -10,7 +8,6 @@ const register_Ctrl = {
     },
     createUser: (req, res) => {
         db.Users.create({
-            
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             email: req.body.email,

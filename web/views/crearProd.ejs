@@ -2,7 +2,7 @@
 <div class="container-crear-prod">
     <div class="subcontainer-crear-prod">
         <h3>Creación de producto</h3>
-        <form id="formProd" method="POST" action="/productos/create">
+        <form id="formProd" method="POST" action="/productos/create" enctype="multipart/form-data">
             <label>Nombre</label>
             <input id="nombreProd" type="text" name="name" placeholder="Ej: Chocotorta">
             <div id="errorNombreProd" ></div>
@@ -23,12 +23,13 @@
                 <% };%>
             </select>
             <label for="image">Imagen</label>
-            <input type="text" name="image" placeholder="Ej ruta imagen">
+            <input type="file" name="image">
             <button type="submit">Crear</button>
         </form>
     </div>
 </div>
 <%- include("./partials/footer") %>
+
 <!-- <script type="text/javascript" src="../public/js/productos.js"></script> -->
 
 <script type="text/javascript">
