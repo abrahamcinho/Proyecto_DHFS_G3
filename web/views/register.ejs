@@ -3,7 +3,7 @@
     <div class="register_subcontainer">
         <h3 class="create_account">¡Crea tu cuenta!</h3>
         <form id="formRegistro" action="/registro" method="POST" enctype="multipart/form-data">
-            <input id="nombre" type=" text" name="first_name" placeholder="Nombre">
+            <input id="nombre" type="text" name="first_name" placeholder="Nombre">
             <div id="errorNombre"></div>
             <input id="apellido" type="text" name="last_name" placeholder="Apellido">
             <div id="errorApellido"></div>
@@ -17,8 +17,6 @@
                     <option value="<%= categories[i].users_categ_id %>"><%= categories[i].name %></option>
                 <% };%>
             </select>
-            <!-- <input id="avatar" type="file" name="avatar" onchange="validateImage()" accept="image/png,image/jpeg,image/bmp,image/gif"> -->
-            <!-- <input id="avatar" type="file" name="avatar" onchange="validateImage()"> -->
             <input id="avatar" type="file" name="avatar">
             <div id="errorAvatar"></div>
             <button type="submit"><span>Registrarse</span></button>

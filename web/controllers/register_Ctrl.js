@@ -7,6 +7,7 @@ const register_Ctrl = {
             .catch((e) => console.log(e));
     },
     createUser: (req, res) => {
+        console.log('body', req.body);
         db.Users.create({
             first_name: req.body.first_name,
             last_name: req.body.last_name,

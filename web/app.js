@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const bodyParser = require("body-parser");
 const auth = require('./middlewares/authUser');
 
 //configuracion db
@@ -15,6 +16,12 @@ db.sqlize.sync()
 
 app.use(cookieParser());
 app.use('/public', express.static('public'));
+
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse requests of content-type - application/json
+app.use(bodyParser.json());
 
 //settings
 app.set('views', path.resolve(__dirname, 'views'));
@@ -33,18 +40,16 @@ app.use(express.urlencoded({
 
 app.use(express.json());
 
-const loginCTRL = require('./controllers/login_Ctrl');
-
 app.use(auth);
-app.use('/login', loginCTRL);
-app.use('/login', require('./routers/login'));
+// app.use('/login', loginCTRL);
 
 //Router
 app.use('/', require('./routers/home'));
+app.use('/login', require('./routers/login'));
 app.use('/productos', require('./routers/productos'));
 app.use('/usuarios', require('./routers/usuarios'));
 app.use('/registro', require('./routers/register'));
-app.use('/categorie', require('./routers/bycategories'));
+app.use('/categoria', require('./routers/bycategories'));
 app.use('/carrito', require('./routers/shoppingcart'));
 app.use('/contacto', require('./routers/contact'));
 
