@@ -45,3 +45,5 @@ ALTER TABLE `sweetdreams`.`flavors_products` DROP INDEX `prod_id`, ADD INDEX `fl
 ALTER TABLE `flavors_products` ADD INDEX(`flavor_id`);
 
 ALTER TABLE `sweetdreams`.`flavors_products` DROP INDEX `flavor_id`, ADD INDEX `flavors_products_flavor_id` (`flavor_id`) USING BTREE;
+
+CREATE TABLE `sweetdreams`.`chart` ( `user_id` int(10) UNSIGNED NOT NULL, `prod_id` int(10) UNSIGNED NOT NULL, `quantity` int(10) UNSIGNED NOT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
