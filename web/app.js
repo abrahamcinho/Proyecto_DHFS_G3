@@ -31,7 +31,8 @@ app.set('view engine', 'ejs');
 app.use(session({
     secret: 'Session - Top Secret',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: { maxAge: 10000 }
 }));
 
 app.use(express.urlencoded({
@@ -41,7 +42,6 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 app.use(auth);
-// app.use('/login', loginCTRL);
 
 //Router
 app.use('/', require('./routers/home'));
