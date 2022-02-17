@@ -5,7 +5,7 @@ const productos_Ctrl = {
         db.ProductsCateg.findAll()
         .then((categories) => {
             db.Products.findAll()
-            .then((bycateg) => res.render('listadoProductos', { categories: categories, bycateg: bycateg }))
+            .then((bycateg) => res.render('listadoProductos', { categories: categories, bycateg: bycateg, user: req.session.userLogged }))
             .catch((e) => console.log(e));
         })
         .catch((e) => console.log(e));
@@ -20,7 +20,7 @@ const productos_Ctrl = {
                     db.Products.findAll()
                     .then((products) => {
                         const prods = products.sort(() => Math.random() - 0.5);
-                        res.render('detalleDelProducto', { product: product, flavors: flavors, sizes: sizes, prods: prods });});})
+                        res.render('detalleDelProducto', { product: product, flavors: flavors, sizes: sizes, prods: prods, user: req.session.userLogged });});})
                 .catch((e) => console.log(e));
             })
             .catch((e) => console.log(e));
@@ -31,7 +31,7 @@ const productos_Ctrl = {
         db.Products.findOne({ where: { prod_id: req.params.id } })
         .then((product) => {
             db.ProductsCateg.findAll()
-            .then((categories) => res.render('editarProd', { product: product, categories: categories }))
+            .then((categories) => res.render('editarProd', { product: product, categories: categories, user: req.session.userLogged }))
             .catch((e) => console.log(e));
         })
         .catch((e) => console.log(e));
@@ -51,7 +51,7 @@ const productos_Ctrl = {
     },
     createForm: (req, res) => {
         db.ProductsCateg.findAll()
-        .then((categories) => res.render('crearProd', { categories: categories }))
+        .then((categories) => res.render('crearProd', { categories: categories, user: req.session.userLogged }))
         .catch((e) => console.log(e));
     },
     createProd: (req, res) => {

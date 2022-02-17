@@ -1,5 +1,5 @@
 const db = require('../config/dataBase_config');
-const bcryptjs = require("bcryptjs");
+const bcryptjs = require('bcryptjs');
 
 const login_Ctrl = {
     showLogin: (req, res) => {
@@ -12,7 +12,7 @@ const login_Ctrl = {
         if (req.body.remember) {
             var hour = 3600;
             req.session.cookie.maxAge = 14 * 24 * hour;
-            res.cookie("Celeste", "algo");
+            res.cookie('sweetdreams', 'logincookie');
         } else {
             req.session.cookie.expires = false;
         }
@@ -20,10 +20,8 @@ const login_Ctrl = {
         .then((user) => {
             if (user && bcryptjs.compareSync(req.body.password, user.password)) {
                 delete user.password;
-                console.log('user', user);
                 req.session.userLogged = user;
-                console.log('logged', req.session.userLogged);
-                res.redirect('/', { user: user });
+                res.redirect('/');
             } else {
                 res.render('login');
             }
