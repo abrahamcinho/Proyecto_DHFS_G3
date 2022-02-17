@@ -46,6 +46,7 @@ app.use(auth);
 //Router
 app.use('/', require('./routers/home'));
 app.use('/login', require('./routers/login'));
+app.use('/logout', require('./routers/logout'));
 app.use('/productos', require('./routers/productos'));
 app.use('/usuarios', require('./routers/usuarios'));
 app.use('/registro', require('./routers/register'));

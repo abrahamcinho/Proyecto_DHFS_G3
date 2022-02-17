@@ -12,7 +12,7 @@ const login_Ctrl = {
         if (req.body.remember) {
             var hour = 3600;
             req.session.cookie.maxAge = 14 * 24 * hour;
-            res.cookie('sweetdreams', 'logincookie');
+            res.cookie('remember_me', 'logincookie');
         } else {
             req.session.cookie.expires = false;
         }
