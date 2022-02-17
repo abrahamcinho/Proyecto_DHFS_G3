@@ -1,26 +1,74 @@
 <%- include("./partials/header") %>
 <div class="register_container">
+    
     <div class="register_subcontainer">
         <h3 class="create_account">¡Crea tu cuenta!</h3>
+        <div>
+ <!-- validacion backend -->
+
+<% if(typeof(errors) != 'undefined'){%>
+    <ul class="alert alert-danger">
+       <% errors.forEach(error => { %>
+          <li><%= error.msg%></li>
+       <%});%>
+     </ul>
+ <%}%>    
+
+
+</div>
         <form id="formRegistro" action="/registro" method="POST" enctype="multipart/form-data">
-            <input id="nombre" type=" text" name="first_name" placeholder="Nombre">
+            <input 
+            id="nombre" 
+            type=" text" 
+            name="first_name"
+             placeholder="Nombre"
+             class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null  %>"
+             value="<%= locals.oldData ? oldData.first_name : null  %>">
             <div id="errorNombre"></div>
-            <input id="apellido" type="text" name="last_name" placeholder="Apellido">
+           
+            <input 
+            id="apellido" 
+            type="text" 
+            name="last_name" 
+            placeholder="Apellido"
+            class="form-control <%= locals.errors && errors.last_name ? 'is-invalid' : null  %>"
+            value="<%= locals.oldData ? oldData.last_name : null  %>">
             <div id="errorApellido"></div>
-            <input id="email" type="email" name="email" placeholder="Email">
+             
+            <input
+             id="email"
+              type="email" 
+              name="email" 
+              placeholder="Email"
+              class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null  %>"
+              value="<%= locals.oldData ? oldData.email : null  %>">
             <div id="errorEmail"></div>
-            <input id="password" type="password" name="password" placeholder="Contraseña">
+               
+            <input
+             id="password"
+              type="password" 
+              name="password" 
+              placeholder="Contraseña"
+              class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null  %>"
+              value="<%= locals.oldData ? oldData.password : null  %>">
             <div id="errorPass"></div>
-            <select name="users_categ_id">
+            <select name="users_categ_id"
+            class="form-control <%= locals.errors && errors.users_categ_id ? 'is-invalid' : null  %>">
                 <option>Seleccione...</option>
                 <% for (let i = 0; i < categories.length; i++) { %>
-                    <option value="<%= categories[i].users_categ_id %>"><%= categories[i].name %></option>
+                    <option value="<%= categories[i].users_categ_id %>"<%= locals.oldData && (categories[i].name === oldData.users_categ_id) ? 'selected' :null  %>><%= categories[i].name %></option>
                 <% };%>
             </select>
             <!-- <input id="avatar" type="file" name="avatar" onchange="validateImage()" accept="image/png,image/jpeg,image/bmp,image/gif"> -->
             <!-- <input id="avatar" type="file" name="avatar" onchange="validateImage()"> -->
-            <input id="avatar" type="file" name="avatar">
+            <input
+             id="avatar" 
+             type="file" 
+             name="avatar"
+             class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null  %>"
+              value="<%= locals.oldData ? oldData.avatar : null  %>">
             <div id="errorAvatar"></div>
+           
             <button type="submit"><span>Registrarse</span></button>
         </form>
         <p class="conditions">Al hacer click en <strong>Registrarse</strong>, aceptas nuestros

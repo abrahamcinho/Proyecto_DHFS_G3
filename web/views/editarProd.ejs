@@ -2,16 +2,31 @@
 <div class="container-crear-prod">
     <div class="subcontainer-crear-prod">
         <h3>Editar/Eliminar Producto</h3>
-        <form id="formProd" method="POST" action="/productos/edit/<%= product.prod_id %>">
+        <div>
+            <!-- validacion backend -->
+           
+           <% if(typeof(errors) != 'undefined'){%>
+               <ul class="alert alert-danger">
+                  <% errors.forEach(error => { %>
+                     <li><%= error.msg%></li>
+                  <%});%>
+                </ul>
+            <%}%>    
+           
+           
+           </div>
+        <form id="formProd" method="POST" action="/productos/edit/<%= product.prod_id %>" enctype="multipart/form-data">
             <label for="Nombre">Nombre:</label>
-            <input id="nombreProd" type="text" name="name" value="<%= product.name %>">
+            <input id="nombreProd" type="text" name="name" value="<%= product.name %>" class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null  %>"
+            value="<%= locals.oldData ? oldData.first_name : null  %>">
             <div id="errorNombreProd" ></div>
             <label for="Precio">Precio:</label>
             <input type="number" value="<%= product.price %>" name="price">
             <label for="Descuento">Descuento:</label>
             <input type="number" value="<%= product.discount %>" name="discount">
             <label for="Descripcion">Descripción:</label>
-            <input id="descripcion" type="text" value="<%= product.description %>" name="description" >
+            <input id="descripcion" type="text" value="<%= product.description %>" name="description" class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null  %>"
+            value="<%= locals.oldData ? oldData.first_name : null  %>" >
             <div id="errorDescripcion" ></div>
             <img src="<%= product.image %>" alt="<%=product.name%>">
             <label for="Categoria">Categoría:</label>  
