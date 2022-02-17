@@ -1,51 +1,33 @@
-const express = require("express");
-//const { validationResult } = require("express-validator");
-const router = express.Router();
-var fs = require('fs');
-var path = require("path");
-//Llamando al JSON
-const dataPath = path.resolve(__dirname, "../data/usuarios.json");
-const bcryptjs = require("bcryptjs");
+const db = require('../config/dataBase_config');
+const bcryptjs = require('bcryptjs');
 
-const data = require("../data/usuarios.json");
-
-router.get("/", (req, res) => {
-    res.render("login");
-});
-
-router.post("/", (req, res) => {
-
-    //Manejo de cookies
-    if (req.body.remember) {
-        var hour = 3600;
-        req.session.cookie.maxAge = 14 * 24 * hour;
-        res.cookie("Celeste", "algo");
-    } else {
-        req.session.cookie.expires = false;
+const login_Ctrl = {
+    showLogin: (req, res) => {
+        db.Users.findAll()
+        .then((users) => res.render('login'))
+        .catch((e) => console.log(e));
+    },
+    reqLogin: (req, res) => {
+        //Manejo de cookies
+        if (req.body.remember) {
+            var hour = 3600;
+            req.session.cookie.maxAge = 14 * 24 * hour;
+            res.cookie('remember_me', 'logincookie');
+        } else {
+            req.session.cookie.expires = false;
+        }
+        db.Users.findOne({ where: { email: req.body.email } })
+        .then((user) => {
+            if (user && bcryptjs.compareSync(req.body.password, user.password)) {
+                delete user.password;
+                req.session.userLogged = user;
+                res.redirect('/');
+            } else {
+                res.render('login');
+            }
+        })
+        .catch((e) => console.log(e));
     }
-
-    //Validar email y password
-    let usuario = findByField("email", req.body.email);
-    if (usuario && bcryptjs.compareSync(req.body.password, usuario.password)) {
-        //console.log(req.session);
-        delete usuario.password;
-        req.session.userLogged = usuario;
-        return res.redirect("/");
-    } else {
-        return res.render("login");
-        
-    }
-});
-
-
-function findByField(field, text) {
-    let todosLosUsuarios = findAll();
-    let usuarioEncontrado = todosLosUsuarios.find(oneUser => oneUser[field] === text);
-    return usuarioEncontrado;
-
 }
 
-function findAll() {
-    return data;
-}
-module.exports = router;
+module.exports = login_Ctrl;

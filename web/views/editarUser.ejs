@@ -1,18 +1,18 @@
 <%- include("./partials/header") %>
 <h2 class="prod_title">Edición de Usuarios</h2>
-<form class="form_edit" method="POST" action="/usuarios/edit/<%= user.user_id %>">
+<form class="form_edit" method="POST" action="/usuarios/edit/<%= users.user_id %>">
     <label for="Nombre">Nombre:</label>
-    <input type="text" name="first_name" value="<%= user.first_name %>">
+    <input type="text" name="first_name" value="<%= users.first_name %>">
     <label for="Apellido">Apellido:</label>
-    <input type="text" value="<%= user.last_name %>" name="last_name">
+    <input type="text" value="<%= users.last_name %>" name="last_name">
     <label for="Email">Email:</label>
-    <input type="email" value="<%= user.email %>" name="email">
+    <input type="email" value="<%= users.email %>" name="email">
     <label for="Avatar">Avatar:</label>
-    <input type="text" value="<%= user.avatar %>" name="avatar" >
+    <input id="avatar" type="file" name="avatar">
     <label for="Categoria">Categoría:</label>  
     <select name="users_categ_id">
         <% categories.forEach(categorie => {%>
-            <% if (categorie.users_categ_id === user.users_categ_id) {%>
+            <% if (categorie.users_categ_id === users.users_categ_id) {%>
                 <option value="<%= categorie.users_categ_id %>" selected><%= categorie.name %></option>
             <% } else {%>
                 <option value="<%= categorie.users_categ_id %>"><%= categorie.name %></option>
@@ -21,6 +21,6 @@
     </select>
     <button type="submit" value="Aceptar">Aceptar</button>
     <button type="cancel" value="Cancelar">Cancelar</button>
-    <a href="/usuarios/delete/<%=user.user_id %>"><i class="fa-solid fa-trash-can"></i></a>
+    <a href="/usuarios/delete/<%=users.user_id %>"><i class="fa-solid fa-trash-can"></i></a>
 </form>
 <%- include("./partials/footer") %>

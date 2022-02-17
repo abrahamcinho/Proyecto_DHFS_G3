@@ -5,7 +5,7 @@ const {validationResult} = require('express-validator');
 const register_Ctrl = {
     selectCateg: (req, res) => {
         db.UsersCateg.findAll()
-            .then((categories) => res.render('register', { categories: categories }))
+            .then((categories) => res.render('register', { categories: categories, user: req.session.userLogged }))
             .catch((e) => console.log(e));
     },
     createUser: (req, res) => {

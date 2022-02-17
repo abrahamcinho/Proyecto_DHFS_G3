@@ -58,6 +58,7 @@
 <div class="productos_similares">
     <% for (let i = 0; i <= 2; i++) { %>
         <div class="imagenes_prod_similares ">
+            <% console.log(prods[i].image) %>
             <a href="/productos/detail/<%=prods[i].prod_id%>"><img src="<%= prods[i].image %>" alt="<%= prods[i].name %>"></a>
         </div>
     <% };%>

@@ -2,27 +2,27 @@
 <div class="login_container">
     <div class="login_subcontainer">
         <h2>Mi cuenta</h2>
-        <form id="formLogin" action="http://localhost:3030/login" method="POST">
+        <form id="formLogin" action="/login" method="POST">
             <div class="login_pass_container">
                 <div class="login">
                     <i class="far fa-user"></i>
-                    <input id="email" type="text" name="email" placeholder="Login">
+                    <input id="email" type="text" name="email" placeholder="Usuario">
                 </div>
                 <div id="errorEmailLogin"></div>
-                <div class="pass ">
-                    <i class="fas fa-key "></i>
-                    <input id="password" type="password" name="password" placeholder="Password">
+                <div class="pass">
+                    <i class="fas fa-key"></i>
+                    <input id="password" type="password" name="password" placeholder="Contraseña" required>
                 </div>
                 <div id="errorPassLogin"></div>
                 <p class="remember">
                     <input type="checkbox" id="remember" name="remember" value="1" />
                     <label for="remember">Recordarme</label>
                 </p>
-                <a href="# ">¿Olvidaste tu contraseña?</a>
-                <a href="/registro ">Registrarse</a>
-                <button type="submit "><span>Ingresar</span></button>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                <a href="/registro">Registrarse</a>
+                <button type="submit"><span>Ingresar</span></button>
         </form>
     </div>
 </div>
 <%- include("./partials/footer") %>
-<script src="../public/js/login.js"></script>
+<!-- <script src="../public/js/login.js"></script> -->

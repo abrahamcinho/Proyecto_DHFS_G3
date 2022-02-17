@@ -28,7 +28,7 @@
             <input id="descripcion" type="text" value="<%= product.description %>" name="description" class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null  %>"
             value="<%= locals.oldData ? oldData.first_name : null  %>" >
             <div id="errorDescripcion" ></div>
-            <img src="<%= product.image %>" alt="<%=product.name%>">
+            <input type="file" name="image" value="<%= product.image %>">
             <label for="Categoria">Categoría:</label>  
             <select name="categorie">
                 <% categories.forEach(categorie => {%>

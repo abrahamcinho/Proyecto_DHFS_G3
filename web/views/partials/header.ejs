@@ -28,11 +28,11 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/productos">Productos</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
-        <% if (locals.isAuthenticated == false) {%>
+        <% if (locals.isAuthenticated === false) {%>
             <div class="col-header-25 right-menu">
                 <ul>
                     <li><a href="/login">Login</a></li>
@@ -40,10 +40,10 @@
                     <li><a href="/carrito">Carrito</a></li>
                 </ul>
             </div>
-        <% } else { %> 
+        <% } else { %>
             <div class="col-header-25 right-menu">
                 <ul>
-                    <li class="user">Hola, <%= user.nombre %></li>
+                    <li class="user">Hola, <%= user.first_name %> <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a></li>
                     <li><a href="/carrito">Carrito</a></li>
                 </ul>
             </div>

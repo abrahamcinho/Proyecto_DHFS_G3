@@ -46,6 +46,7 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 uploadFile.single('image');
+
 //Consultas
 router.get('/', productos_Ctrl.listAllCateg);
 router.get('/detail/:id', productos_Ctrl.listByProd);
