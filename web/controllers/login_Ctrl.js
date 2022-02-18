@@ -18,7 +18,7 @@ const login_Ctrl = {
         }
         db.Users.findOne({ where: { email: req.body.email } })
         .then((user) => {
-            console.log('session', req.session);
+            console.log('user', user);
             if (user && bcryptjs.compareSync(req.body.password, user.password)) {
                 delete user.password;
                 req.session.userLogged = user;
