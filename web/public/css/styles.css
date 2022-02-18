@@ -434,6 +434,28 @@ footer h4 {
     margin: 20px auto;;
 }
 
+/*Formulario Contacto*/
+#formContacto textarea{
+    border-top: none;
+	border-left: none;
+	border-right: none;
+	font-family: 'Quicksand', sans-serif;
+	border-radius: .25rem;
+	padding: .375rem .75rem;
+	line-height: 1.5;
+    width: 100%;
+}
+#formContacto input{
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	font-family: 'Quicksand', sans-serif;
+	min-width: 300px;
+	border-radius: .25rem;
+	padding: .375rem .75rem;
+	line-height: 1.5;
+}
+
 /*Desk 1400*/
 @media(max-width:1499px) {
     .main-container .left-col .aside-destacado .mask {
