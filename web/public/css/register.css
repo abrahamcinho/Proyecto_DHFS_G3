@@ -32,6 +32,13 @@
 .register_subcontainer input {
 	border: none;
 }
+.register_subcontainer .alert, .subcontainer-crear-prod .alert {
+	text-align: left;
+	padding-left: 30px;
+}
+.register_subcontainer .alert li, .subcontainer-crear-prod .alert li {
+	list-style: disc;
+}
 
 .conditions,
 .have_account {
