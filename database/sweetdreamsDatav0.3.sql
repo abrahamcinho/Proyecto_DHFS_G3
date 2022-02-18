@@ -193,7 +193,9 @@ INSERT INTO `sizes_products` (`size_prod_id`, `prod_id`, `size_id`) VALUES
 CREATE TABLE `sweetdreams`.`chart` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `prod_id` int(10) UNSIGNED NOT NULL,
-  `quantity` int(10) UNSIGNED NOT NULL,
+  `flavor_id` int(10) UNSIGNED NOT NULL,
+  `size_id` int(10) UNSIGNED NOT NULL,
+  `quantity` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
