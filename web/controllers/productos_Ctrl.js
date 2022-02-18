@@ -41,8 +41,8 @@ const productos_Ctrl = {
     updateProd: (req, res) => {
         const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0){
-            console.log('Revise el formulario')
-            console.log(resultValidation.mapped())
+            console.log('Revise el formulario');
+            console.log(resultValidation.mapped());
             return  db.Products.findOne({ where: { prod_id: req.params.id } })
             .then((product) => {
                 db.ProductsCateg.findAll()
