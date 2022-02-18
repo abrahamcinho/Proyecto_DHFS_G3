@@ -31,14 +31,17 @@
 	border: 1px solid;
 	padding: 3rem 4rem;
 }
-.login_pass_container input {
+.login_pass_container input#email, .login_pass_container input#password{
 	border-top: none;
 	border-left: none;
 	border-right: none;
 	/* margin-bottom: 2rem; */
 	font-family: 'Quicksand', sans-serif;
+	min-width: 300px;
 }
-
+/* .login_pass_container input#remember{
+	width: 20%;
+} */
 .login_pass_container button {
 	width: 65%;
 	padding: 0.5rem;
@@ -50,11 +53,12 @@
 }
 .login,
 .pass {
-	width: 90%;
+	/* width: 90%; */
 	display: flex;
 	justify-content: space-around;
 }
 .login i {
+	width: 2rem;
 	height: 2rem;
 }
 .login_pass_container a{
