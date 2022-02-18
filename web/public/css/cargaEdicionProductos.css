@@ -82,7 +82,17 @@
         color: #6f1d57;
     }
 
-    .rss i {
+    /* .rss i {
+        font-size: 26px;
+        background-color: #fcbd8b;
+        margin: 10px 8px 0;
+        border-radius: 30px;
+        height: 45px;
+        width: 45px;
+        text-align: center;
+        line-height: 45px;
+    } */
+    .rss svg {
         font-size: 26px;
         background-color: #fcbd8b;
         margin: 10px 8px 0;

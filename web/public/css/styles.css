@@ -403,8 +403,11 @@ footer h4 {
 .container-crear-prod textarea,
 .container-crear-prod label,
 .container-crear-prod select {
-    width: 80%;
+    width: 100%;
     padding: 5px;
+}
+.container-crear-prod input[type="file"]{
+    text-align: center;
 }
 
 .container-crear-prod label {
@@ -429,6 +432,28 @@ footer h4 {
 #formProd img{
     width: 70%;
     margin: 20px auto;;
+}
+
+/*Formulario Contacto*/
+#formContacto textarea{
+    border-top: none;
+	border-left: none;
+	border-right: none;
+	font-family: 'Quicksand', sans-serif;
+	border-radius: .25rem;
+	padding: .375rem .75rem;
+	line-height: 1.5;
+    width: 100%;
+}
+#formContacto input{
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	font-family: 'Quicksand', sans-serif;
+	min-width: 300px;
+	border-radius: .25rem;
+	padding: .375rem .75rem;
+	line-height: 1.5;
 }
 
 /*Desk 1400*/

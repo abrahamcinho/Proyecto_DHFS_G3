@@ -16,21 +16,21 @@ const validations = [
     body('email')
         .notEmpty().withMessage('El campo email no puede estar vacío').bail()
         .isEmail().withMessage('Debes escribir un formato de correo válido').bail()
-        //Aquí valido si eusuario existe o no en la tabla de usuarios Por el campo email)
-        .custom(function (value) {
-      let contador = 0;
-      for (let i = 0; i < users.length; i++) {
-          if (users[i].email == value) {
-              contador++;
-          }
-      }
-      if (contador > 0) {
-          return false;   // Si retorno falso no aparece el mensaje de error
-      } else {
-          return true;    //Si retorno true, aparece el mensaje de error
-      }
-    }).withMessage('El email ya se encuentra usado'),
-    body('password').notEmpty().withMessage('El campo contraseña no puede estar vacío').isLength({min:8}).withMessage("La contraseña debe tener al menos 8 caracteres"),
+        //Aquí valido si el usuario existe o no en la tabla de usuarios Por el campo email)
+    //     .custom(function (value) {
+    //   let contador = 0;
+    //   for (let i = 0; i < users.length; i++) {
+    //       if (users[i].email == value) {
+    //           contador++;
+    //       }
+    //   }
+    //   if (contador > 0) {
+    //       return false;   // Si retorno falso no aparece el mensaje de error
+    //   } else {
+    //       return true;    //Si retorno true, aparece el mensaje de error
+    //   }
+    // }).withMessage('El email ya se encuentra usado'),
+    ,body('password').notEmpty().withMessage('El campo contraseña no puede estar vacío').isLength({min:8}).withMessage("La contraseña debe tener al menos 8 caracteres"),
     body('users_categ_id').notEmpty().withMessage('El campo categoria no puede estar vacío'),
     body('avatar').custom((value, {req})=>{
         let file = req.file;
