@@ -15,8 +15,8 @@ const validations = [
     body('last_name').isLength({ min: 2}).withMessage("El apellido debe tener al menos 2 caracteres").notEmpty().withMessage('El campo apellido no puede estar vacío'),
     body('email')
         .notEmpty().withMessage('El campo email no puede estar vacío').bail()
-        .isEmail().withMessage('Debes escribir un formato de correo válido').bail()
-        //Aquí valido si el usuario existe o no en la tabla de usuarios Por el campo email)
+        .isEmail().withMessage('Debes escribir un formato de correo válido'),
+    //     //Aquí valido si eusuario existe o no en la tabla de usuarios Por el campo email)
     //     .custom(function (value) {
     //   let contador = 0;
     //   for (let i = 0; i < users.length; i++) {
@@ -29,8 +29,8 @@ const validations = [
     //   } else {
     //       return true;    //Si retorno true, aparece el mensaje de error
     //   }
-    // }).withMessage('El email ya se encuentra usado'),
-    ,body('password').notEmpty().withMessage('El campo contraseña no puede estar vacío').isLength({min:8}).withMessage("La contraseña debe tener al menos 8 caracteres"),
+    // }).withMessage('El email ya se encuentra usado')
+    body('password').notEmpty().withMessage('El campo contraseña no puede estar vacío').isLength({min:8}).withMessage("La contraseña debe tener al menos 8 caracteres"),
     body('users_categ_id').notEmpty().withMessage('El campo categoria no puede estar vacío'),
     body('avatar').custom((value, {req})=>{
         let file = req.file;

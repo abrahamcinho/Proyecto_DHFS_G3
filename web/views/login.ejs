@@ -2,16 +2,30 @@
 <div class="login_container">
     <div class="login_subcontainer">
         <h2>Mi cuenta</h2>
+        <div>
+            <!-- validacion backend -->
+           
+           <% if(typeof(errors) != 'undefined'){%>
+               <ul class="alert alert-danger">
+                  <% errors.forEach(error => { %>
+                     <li><%= error.msg%></li>
+                  <%});%>
+                </ul>
+            <%}%>    
+           
+           
+           </div>
         <form id="formLogin" action="/login" method="POST">
             <div class="login_pass_container">
                 <div class="login">
                     <i style="width:20px;height:20px;padding:5px;"class="far fa-user"></i>
-                    <input id="email" type="text" name="email" placeholder="Usuario">
+                    <input id="email" type="text" name="email" placeholder="Usuario"class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null  %>"
+                    value="<%= locals.oldData ? oldData.email : null  %>">
                 </div>
                 <div id="errorEmailLogin"></div>
                 <div class="pass">
                     <i style="width:20px;height:20px;padding:5px;" class="fas fa-key"></i>
-                    <input id="password" type="password" name="password" placeholder="Contraseña" required>
+                    <input id="password" type="password" name="password" placeholder="Contraseña" required class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null  %>">
                 </div>
                 <div id="errorPassLogin"></div>
                 <p class="remember">
