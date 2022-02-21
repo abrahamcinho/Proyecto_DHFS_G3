@@ -11,8 +11,8 @@ const register_Ctrl = {
     createUser: (req, res) => {
         const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0){
-            console.log('Revise el formulario')
-            console.log(resultValidation.mapped())
+            console.log('Revise el formulario');
+            console.log(resultValidation.mapped());
             return db.UsersCateg.findAll()
             .then((categories) => res.render('register', { categories: categories,
                 errors: resultValidation.errors,

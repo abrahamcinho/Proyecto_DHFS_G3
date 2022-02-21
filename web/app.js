@@ -53,6 +53,9 @@ app.use('/registro', require('./routers/register'));
 app.use('/categoria', require('./routers/bycategories'));
 app.use('/carrito', require('./routers/shoppingcart'));
 app.use('/contacto', require('./routers/contact'));
+app.use('/dashboard/categories', require('./routers/dashboard/dscategories'));
+app.use('/dashboard/products', require('./routers/dashboard/dsproducts'));
+app.use('/dashboard/users', require('./routers/dashboard/dsusers'));
 
 //Listen port
 app.listen(3030, (req, res) => console.log('app para Sweet Dreams online...'));
