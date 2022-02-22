@@ -1,9 +1,18 @@
 const db = require('../config/dataBase_config');
 
 const carrito_Ctrl = {
-    listAll: (req, res) => {	
+    listAll: (req, res) => {
         db.Chart.findAll({ where: { user_id: req.session.userLogged.user_id } })
-        .then((carrito) => res.render('carritoDeCompras', { carrito: carrito, user: req.session.userLogged }))
+        .then((carrito) => {
+            if (carrito.prod_id !== null && carrito.prod_id !== undefined) {
+                console.log('carrito', carrito);
+                db.Products.findAll({ where: { prod_id: carrito.prod_id } })
+                .then((carrito) => res.render('carritoDeCompras', { carrito: carrito, product: product, user: req.session.userLogged }))
+                .catch((e) => console.log(e));
+            } else {
+                res.render('carritoDeCompras', { carrito: [], product: {}, user: req.session.userLogged });
+            }
+        })
         .catch((e) => console.log(e));
     },
     addToCart: (req, res) => {
