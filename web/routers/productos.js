@@ -12,13 +12,9 @@ const validations = [
     body('name').isLength({ min: 5}).withMessage("El nombre debe tener al menos 5 caracteres").bail()
     .notEmpty().withMessage('El campo nombre no puede estar vacío'),
     body('description').isLength({ min:20 }).withMessage("La descripción debe tener menos de 20 caracteres"),
-    
     body('image').custom((value, {req})=>{
         let file = req.file;
         let extensionesAceptadas = ['.jpg', '.jpeg','.png', '.gif'];
-        
-
-
         if(!file){
             throw new Error("Tienes que subir una imagen");
         }else{
