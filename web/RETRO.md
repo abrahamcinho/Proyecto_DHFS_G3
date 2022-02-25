@@ -137,6 +137,25 @@ Procrastinar, esperar afrontar el sprint muy cerca de la fecha de entrega.
 Frustrarnos al no saber hacer algo y no conversarlo con el grupo.
 
 
+## Retro: Sprint 8
+
+1. Comenzar a hacer
+Organizar el tablero de trabajo para este ultimo sprint, asi nos repartimos y organizamos las actividades mas eficientemente/
+
+2. Hacer más
+Reuniones y feedbacks entre el grupo. Tratar de comenzar antes con el sprint para poder corregir errores.
+Buscar hacer copias locales, asi no se pisan y se pierde alguna informacion.
+Preguntar cualquier duda a los profes para orientarnos y revisar las clases grabadas.
+
+3. Continuar haciendo
+Dedicarnos y poner el esfuerzo y ganas que tenemos siempre para afrontar el sprint. Apoyarnos y seguir adelante resolviendo los errores y problemas en el codigo.
+
+4. Hacer menos
+Procrastinar, esperar afrontar el sprint muy cerca de la fecha de entrega.
+
+5. Dejar de hacer
+Frustrarnos al no saber hacer algo y no conversarlo con el grupo.
+
 
 
 
