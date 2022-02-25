@@ -2,12 +2,16 @@ const db = require('../../config/dataBase_config');
 
 const dsUsers_Ctrl = {
     listAll: (req, res) => {
-        db.Users.findAll()
+        db.Users.findAndCountAll( {
+            attributes: ['user_id', 'first_name', 'email' ]
+        })
         .then((users) => res.status(200).json({ users: users }))
         .catch((e) => console.log(e));
     },
     listOne: (req, res) => {
-        db.Users.findOne({ where: { user_id: req.params.id } })
+        db.Users.findOne({ where: { user_id: req.params.id },
+            attributes: ['user_id', 'first_name', 'last_name', 'email', 'avatar' ]
+        })
         .then((user) => res.status(200).json({ user: user }))
         .catch((e) => console.log(e));
     },
