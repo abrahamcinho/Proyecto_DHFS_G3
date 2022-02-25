@@ -2,9 +2,16 @@ const db = require('../../config/dataBase_config');
 
 const dsProductos_Ctrl = {
     listAll: (req, res) => {
-            db.Products.findAll()
-            .then((products) => res.status(200).json({ products: products }))
-            .catch((e) => console.log(e));
+            db.Products.findAndCountAll()
+            .then((products) => {
+                db.Products.findAndCountAll({
+                    attributes: ['prod_categ_id' ],
+                        group: [ 'prod_categ_id' ]
+                })
+                .then((byCateg) => res.status(200).json({ byCateg: byCateg, products: products }))
+                .catch((e) => console.log(e));
+            })
+            .catch(e => console.log(e));
     },
     listOne: (req, res) => {
         db.Products.findOne({ where: { prod_id: req.params.id } })

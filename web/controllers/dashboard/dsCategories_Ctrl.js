@@ -2,7 +2,7 @@ const db = require('../../config/dataBase_config');
 
 const dsCategories_Ctrl = {
     listAll: (req, res) => {
-        db.ProductsCateg.findAll()
+        db.ProductsCateg.findAndCountAll()
         .then((categories) => res.status(200).json({ categories: categories }))
         .catch((e) => console.log(e));
     },
