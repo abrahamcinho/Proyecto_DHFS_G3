@@ -69,17 +69,45 @@
         display: inline-block;
         padding: 20px 0;
     }
+    .col-footer a{
+        text-decoration: none;
+        color: #fffafa;
+    }
+    .col-footer a:hover{
+        text-decoration: none;
+        color: #fffafa;
+        border-bottom: 1px dashed #fffafa;
+    }
+    .col-footer input{
+        width: 100%;
+    }
 
-    .rss ul li {
+    .col-footer.rss ul {
+        padding-top: 15px;
+    }
+
+    .col-footer.rss ul li {
         display: inline-block;
     }
 
-    .rss a {
+    .col-footer.rss li {
+        font-size: 30px;
+        background-color: #fcbd8b;
+        margin: 10px 6px 0;
+        border-radius: 30px;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .col-footer.rss a {
         color: #fffafa;
     }
 
-    .rss a:hover {
+    .col-footer.rss a:hover {
         color: #6f1d57;
+        border-bottom: none;
     }
 
     /* .rss i {
@@ -92,16 +120,6 @@
         text-align: center;
         line-height: 45px;
     } */
-    .rss svg {
-        font-size: 26px;
-        background-color: #fcbd8b;
-        margin: 10px 8px 0;
-        border-radius: 30px;
-        height: 45px;
-        width: 45px;
-        text-align: center;
-        line-height: 45px;
-    }
 
     /*Desk 1400*/
 
