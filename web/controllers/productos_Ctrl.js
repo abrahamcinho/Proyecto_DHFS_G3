@@ -73,8 +73,8 @@ const productos_Ctrl = {
     createProd: (req, res) => {
         const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0){
-            console.log('Revise el formulario');
-            console.log(resultValidation.mapped());
+            console.log('Revise el formulario')
+            console.log(resultValidation.mapped())
             return  db.ProductsCateg.findAll()
             .then((categories) => res.render('crearProd', { categories: categories,
                 errors: resultValidation.errors,

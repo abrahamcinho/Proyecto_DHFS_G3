@@ -5,10 +5,7 @@ const carrito_Ctrl = {
         db.Chart.findAll({ where: { user_id: req.session.userLogged.user_id } })
         .then((carrito) => {
             if (carrito.prod_id !== null && carrito.prod_id !== undefined) {
-<<<<<<< HEAD
                 console.log('carrito', carrito);
-=======
->>>>>>> eee74fc04d56c747b28e77a7f907348df77d1b6c
                 db.Products.findAll({ where: { prod_id: carrito.prod_id } })
                 .then((carrito) => res.render('carritoDeCompras', { carrito: carrito, product: product, user: req.session.userLogged }))
                 .catch((e) => console.log(e));
