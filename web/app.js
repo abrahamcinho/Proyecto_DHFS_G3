@@ -5,7 +5,11 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const bodyParser = require("body-parser");
 const auth = require('./middlewares/authUser');
+const cors = require("cors");
 
+app.use(cors({
+    origin: '*'
+}));
 //configuracion db
 const db = require('./config/dataBase_config');
 
