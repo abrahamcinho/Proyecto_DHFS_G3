@@ -29,6 +29,7 @@ const login_Ctrl = {
         db.Users.findOne({ where: { email: req.body.email } })
         .then(user => {
             // If not exist, return error message
+           
             if(!user){
                 // Create error message
                 var error = {param: "email", msg: "El email ingresado no existe", value: req.body.email};
@@ -39,12 +40,14 @@ const login_Ctrl = {
                     oldData: req.body
                 });  
             }
-           else if (user && bcryptjs.compareSync(req.body.password, user.password)) {
+           else if (bcryptjs.compareSync(req.body.password, user.password)) {
+            
             //else if (user && (req.body.password == db.user.password)) {
                 delete user.password;
                 req.session.userLogged = user;
                 res.redirect('/');
             } else {
+                
                 // Create error message
                 var error = {param: "email", msg: "La contraseña ingresada no es válida", value: req.body.email};
                 // Add to validator errors
