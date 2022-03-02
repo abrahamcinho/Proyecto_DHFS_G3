@@ -9,14 +9,14 @@ module.exports = (sqlize) => {
         last_name: { type: DataTypes.STRING, allowNull: false },
         email: { type: DataTypes.STRING, allowNull: false },
         password: { type: DataTypes.STRING, allowNull: false,
-            get(){
-                const rawValue = this.getDataValue('password');
-                return rawValue;
-            },
-            set(value){
-                const salt = bcryptjs.genSaltSync(10);
-                this.setDataValue('password', bcryptjs.hashSync(value, salt));
-            }
+            // get(){
+            //     const rawValue = this.getDataValue('password');
+            //     return rawValue;
+            // },
+            // set(value){
+            //     const salt = bcryptjs.genSaltSync(10);
+            //     this.setDataValue('password', bcryptjs.hashSync(value, salt));
+            // }
         },
         avatar: { type: DataTypes.STRING, allowNull: true },
         users_categ_id: { allowNull: false, type: DataTypes.INTEGER, }

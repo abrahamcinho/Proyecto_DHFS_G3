@@ -39,7 +39,8 @@ const login_Ctrl = {
                     oldData: req.body
                 });  
             }
-            else if (user && bcryptjs.compareSync(req.body.password, user.password)) {
+           else if (user && bcryptjs.compareSync(req.body.password, user.password)) {
+            //else if (user && (req.body.password == db.user.password)) {
                 delete user.password;
                 req.session.userLogged = user;
                 res.redirect('/');
@@ -52,7 +53,7 @@ const login_Ctrl = {
                     errors: resultValidation.errors,
                     oldData: req.body
                 });  
-            }
+             }
         })
         .catch((e) => console.log(e));
     }

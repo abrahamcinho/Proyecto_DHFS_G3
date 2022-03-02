@@ -27,8 +27,20 @@ const validations = [
             throw new Error(`Las extensiones de archivo permitidas son ${extensionesAceptadas.join(', ')}`);
         }
     }
+
+
+    
         return true;
    })
+];
+
+
+const validationsUpdate = [
+    body('name').isLength({ min: 5}).withMessage("El nombre debe tener al menos 5 caracteres").bail()
+    .notEmpty().withMessage('El campo nombre no puede estar vacío'),
+    body('description').isLength({ min:20 }).withMessage("La descripción debe tener menos de 20 caracteres"),
+    
+    
 ];
 
 
@@ -53,7 +65,7 @@ router.get('/detail/:id', productos_Ctrl.listByProd);
 
 //Update
 router.get('/edit/:id', productos_Ctrl.modifyProd);
-router.post('/edit/:id',uploadFile.single('image'), validations , productos_Ctrl.updateProd);
+router.post('/edit/:id',uploadFile.single('image'), validationsUpdate , productos_Ctrl.updateProd);
 
 //Create
 router.get('/create', productos_Ctrl.createForm);
