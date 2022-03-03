@@ -18,18 +18,16 @@ const register_Ctrl = {
                 errors: resultValidation.errors,
                 oldData: req.body
             }));  
-          }
-          
+        }
         db.Users.create({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             email: req.body.email,
-            password:req.body.password,
-            password: bcrypt.hashSync('req.body.password', 10),
+            //password:req.body.password,
+            password: bcrypt.hashSync(req.body.password, 10),
             avatar: "/public/images/avatar" + req.file.filename,
             users_categ_id: req.body.users_categ_id
-        })
-        
+        })    
         .then(() => res.redirect('login'), { msj: "Registro exitoso" })
         .catch((e) => console.log(e));
     },
