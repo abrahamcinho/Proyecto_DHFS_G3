@@ -40,7 +40,7 @@ const login_Ctrl = {
                     oldData: req.body
                 });  
             }
-           else if (bcryptjs.compareSync(req.body.password, user.password)) {
+           else if (user && (bcryptjs.compareSync(req.body.password, user.password))) {
             
             //else if (user && (req.body.password == db.user.password)) {
                 delete user.password;
