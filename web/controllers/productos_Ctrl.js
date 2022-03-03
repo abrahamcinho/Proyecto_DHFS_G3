@@ -46,7 +46,7 @@ const productos_Ctrl = {
             return  db.Products.findOne({ where: { prod_id: req.params.id } })
             .then((product) => {
                 db.ProductsCateg.findAll()
-                .then((categories) => res.render('editarProd', { product: product, categories: categories,errors: resultValidation.errors,
+                .then((categories) => res.render('editarProd', { product: product, user: req.session.userLogge, categories: categories,errors: resultValidation.errors,
                     oldData: req.body }))
                 .catch((e) => console.log(e));
             })
