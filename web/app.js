@@ -10,8 +10,6 @@ const cors = require("cors");
 app.use(cors({
     origin: '*'
 }));
-
-
 //configuracion db
 const db = require('./config/dataBase_config');
 
