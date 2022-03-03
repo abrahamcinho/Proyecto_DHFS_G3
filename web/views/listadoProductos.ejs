@@ -1,7 +1,15 @@
 <%- include("./partials/header") %>
 <div class="container">
     <!-- <h2>Presione para agregar producto</h2> -->
+
+    <% if (locals.isAuthenticated === true) {%>
+        <% if (user.users_categ_id !== undefined && user.users_categ_id !== null && user.users_categ_id === 2) {%>
+            <button class="btn-listadoProd button_margin"><a href="/productos/create/">Crear producto</a></button>
+        <% } %>
+    <% } %>
+
     <button class="btn-listadoProd button_margin"><a href="/productos/create/">Crear producto</a></button>
+
     <h2 class="prod_tittle">Listado de Productos</h2>
     <div class="products_container">
         <div class="products_subcontainer">
@@ -17,8 +25,17 @@
                                 <img src="<%= product.image %>">
                                 <h5><%= product.name %></h5>
                                 <p>Precio: $<%= product.price %></p>
+
+                                <% if (locals.isAuthenticated === true) {%>
+                                    <% if (user.users_categ_id !== undefined && user.users_categ_id !== null && user.users_categ_id === 2) {%>
+                                        <button class="button_margin"><a href="/productos/detail/<%=product.prod_id%>">Ver detalle del producto</a></button>
+                                        <button class="button_margin"><a href="/productos/edit/<%=product.prod_id%>">Editar/Eliminar producto</a></button>
+                                    <% } %>
+                                <% } %>    
+
                                 <button class="button_margin"><a href="/productos/detail/<%=product.prod_id%>">Ver detalle del producto</a></button>
                                 <button class="button_margin"><a href="/productos/edit/<%=product.prod_id%>">Editar/Eliminar producto</a></button>
+
                                 <button class="button_margin" name="boton" type="button"><a href="/productos/detail/<%=product.prod_id%>">AÑADIR AL CARRITO</a></button>
                             </div>
                         <% };%>
