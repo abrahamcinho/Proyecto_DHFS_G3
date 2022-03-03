@@ -76,7 +76,7 @@ const productos_Ctrl = {
             console.log('Revise el formulario')
             console.log(resultValidation.mapped())
             return  db.ProductsCateg.findAll()
-            .then((categories) => res.render('crearProd', { categories: categories,
+            .then((categories) => res.render('crearProd', { categories: categories, user: req.session.userLogged,
                 errors: resultValidation.errors,
                 oldData: req.body
             }));  
