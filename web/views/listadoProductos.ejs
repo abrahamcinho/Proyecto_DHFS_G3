@@ -18,10 +18,9 @@
                     <% bycateg.forEach(product => {%>
                         <% if (product.prod_categ_id === categories[i].prod_categ_id) {%>
                             <div class="product_box">
-                                <img src="<%= product.image %>">
+                                <a href="/productos/detail/<%=product.prod_id%>"><img src="<%= product.image %>"></a>
                                 <h5><%= product.name %></h5>
                                 <p>Precio: $<%= product.price %></p>
-
                                 <% if (locals.isAuthenticated === true) {%>
                                     <% if (user.users_categ_id !== undefined && user.users_categ_id !== null && user.users_categ_id === 2) {%>
                                         <button class="button_margin"><a href="/productos/detail/<%=product.prod_id%>">Ver detalle del producto</a></button>
