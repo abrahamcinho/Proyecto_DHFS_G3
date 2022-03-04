@@ -74,7 +74,7 @@
 .estilo_cuadro {
     font-family: 'Quicksand', sans-serif;
     border-radius: 5px;
-    margin: 10px;
+    margin: 10px 0;
     border: 2px solid #6f1d57;
     width: 90%;
 }
@@ -228,6 +228,7 @@ footer h4 {
     .detalles-producto {
         padding: 0 20vw;
         margin-bottom: 40px;
+        width: 100%;
     }
 
     .estilo_cuadro {
@@ -248,6 +249,9 @@ footer h4 {
     }
 
     .col-footer.rss {
+        width: 100%;
+    }
+    .imagenes, .boton_carrito{
         width: 100%;
     }
 }
@@ -285,6 +289,7 @@ footer h4 {
     .col-footer.rss {
         width: 100%;
     }
+    
 }
 
 /*Mobile*/
@@ -321,5 +326,7 @@ footer h4 {
     .col-header-50.main-menu {
         position: inherit;
     }
-
+    .detalles-producto button{
+        margin: 20px 0 0;
+    }
 }
